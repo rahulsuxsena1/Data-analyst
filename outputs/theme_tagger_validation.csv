@@ -1,0 +1,7 @@
+theme,precision,recall,recall_direct_phrasing,recall_indirect_phrasing,polarity_accuracy
+service,0.994,0.76,1.0,0.011,0.878
+price,0.911,0.779,1.0,0.044,0.756
+maintenance,0.996,0.863,1.0,0.418,0.759
+reliability,0.985,0.771,1.0,0.031,0.942
+comfort,0.994,0.772,1.0,0.0,1.0
+mileage,0.994,0.776,1.0,0.0,0.918

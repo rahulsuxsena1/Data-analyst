@@ -1,0 +1,7 @@
+scenario,scope_reviews,complaints_removed,scope_avg_before,scope_avg_after,portfolio_avg_change,assumption
+Cut negative service reviews by 10%,11496,88,3.643,3.652,0.01,each removed complaint adds 1.25 stars (regression coefficient)
+Cut negative service reviews by 25%,11496,221,3.643,3.667,0.024,each removed complaint adds 1.25 stars (regression coefficient)
+Cut negative reliability reviews by 10%,11496,64,3.643,3.651,0.008,each removed complaint adds 1.39 stars (regression coefficient)
+Cut negative price reviews by 10%,11496,148,3.643,3.645,0.002,each removed complaint adds 0.18 stars (regression coefficient)
+Norvik: halve negative service reviews,1507,112,3.39,3.483,0.012,each removed complaint adds 1.25 stars (regression coefficient)
+Velora Strato MY2022-23: fix the transmission issue (-70% reliability complaints),227,48,2.93,3.222,0.006,each removed complaint adds 1.39 stars (regression coefficient)

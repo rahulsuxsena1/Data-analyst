@@ -1,0 +1,6 @@
+brand,theme,theme_alert,theme_rate,theme_baseline,low_rating_share_same_quarter,low_rating_baseline,low_rating_alert
+Tamaru,price,2023Q2,0.25,0.1,0.15,0.08,never fired
+Velora,reliability,2022Q4,0.167,0.038,0.229,0.196,never fired
+Velora,comfort,2024Q3,0.118,0.029,0.204,0.163,never fired
+Velora,mileage,2022Q4,0.104,0.013,0.229,0.196,never fired
+Zephyr,reliability,2023Q3,0.13,0.021,0.185,0.162,never fired

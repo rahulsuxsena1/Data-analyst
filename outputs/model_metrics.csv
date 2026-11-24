@@ -1,0 +1,4 @@
+model,accuracy,macro_f1,negative_precision,neutral_precision,positive_precision,negative_recall,neutral_recall,positive_recall
+Majority class,0.61,0.252,0.0,0.0,0.61,0.0,0.0,1.0
+VADER,0.629,0.523,0.387,0.337,0.823,0.589,0.272,0.78
+TF-IDF + LogReg,0.885,0.856,0.773,0.787,0.963,0.863,0.858,0.902

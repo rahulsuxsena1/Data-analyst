@@ -1,0 +1,265 @@
+review_id,brand,model,rating,sentiment_label,pred,pred_vader,confidence,vader_compound,mixed_flag,text_rating_conflict,review_text
+R106595,Aurex,Sprint,1,negative,neutral,neutral,0.9993844807665244,0.0,0,0,Mixed feelings about this one.
+R106946,Kestrel,K5,4,positive,neutral,neutral,0.9955023756003657,0.3116,0,0,"It's okay, nothing special. Overpriced compared to rivals in the same class."
+R106447,Velora,Lumen,2,negative,positive,neutral,0.9951728906142746,0.1531,0,0,Overall a solid car. Would buy again.
+R105625,Norvik,Fjord,1,negative,positive,positive,0.9912645643958211,0.891,0,1,Pretty happy with it so far. The cabin is quiet and the ride is smooth.
+R105788,Aurex,Atlas,2,negative,neutral,negative,0.9875895472863491,-0.6642,0,0,Decent but not great. My wallet is still recovering from the purchase.
+R108960,Velora,Lumen,3,neutral,positive,positive,0.9873034706796485,0.9729,0,0,"Pretty happy with it so far. Super reliable, not a single issue in 3 years. Very comfortable seats, great for road trips. Service appointments are quick and the advisor keeps me updated."
+R102613,Kestrel,Ridge,3,neutral,negative,negative,0.987269968385925,-0.7002,0,0,Not happy with this purchase. My wallet is still recovering from the purchase. It broke down on the highway with my kids in the car.
+R105563,Velora,Strato,3,neutral,negative,negative,0.9856626521776113,-0.4215,0,0,The transmission started slipping at 52k miles. Look elsewhere.
+R107348,Solano,Mesa,3,neutral,negative,negative,0.9831176615809456,-0.6367,0,0,Not happy with this purchase. Legroom in the back is a joke.
+R111053,Kestrel,K5,2,negative,positive,positive,0.9795086031041833,0.7335,0,1,"Absolutely love this car. Would recommend. My family can sit in it for hours without complaining. Great experience at the dealership, no pressure at all. We use it mostly for school runs."
+R109855,Kestrel,K5,1,negative,neutral,positive,0.9773351749932817,0.4404,0,0,Mixed feelings about this one. Spare parts are easy to find and reasonably priced.
+R111838,Solano,Breeze,2,negative,positive,positive,0.972943230399849,0.6697,0,1,Absolutely love this car.
+R105356,Aurex,Sprint,1,negative,positive,positive,0.9723329905732813,0.8573,0,1,"Overall a solid car. Priced fairly for the features you get. Fuel efficiency is outstanding. Starts every morning without fail, even in winter."
+R106941,Velora,Lumen,1,negative,positive,positive,0.9644395287147789,0.8992,1,1,Pretty happy with it so far. The engine is bulletproof. Honestly not good value for money at this price point. The team that looks after my car treats me like family.
+R100038,Aurex,Sprint,3,neutral,negative,neutral,0.9643411742248411,0.0,0,0,Expected much more. The final price was $2600 higher than the quote.
+R103680,Velora,Lumen,1,negative,positive,positive,0.9638878788572209,0.9455,0,1,"Very happy with my purchase. Had it for about 17 months now. Very comfortable seats, great for road trips. Would buy again. Very reliable car, never let me down."
+R100825,Velora,Strato,5,positive,neutral,neutral,0.9618552538599966,0.0366,1,0,"It's okay, nothing special. The service advisor tried to upsell me on things I did not need. Spare parts are easy to find and reasonably priced."
+R111452,Norvik,Fjord,5,positive,neutral,positive,0.9616937572902561,0.9377,0,0,"Mixed feelings about this one. The salesperson promised things the dealer later denied. Great value for money. Very comfortable seats, great for road trips."
+R105415,Velora,Strato,2,negative,positive,positive,0.9611657251216756,0.8858,0,1,Very happy with my purchase. The cabin is quiet and the ride is smooth. Customer support sorted out my warranty claim within a day.
+R107159,Aurex,Atlas,4,positive,neutral,neutral,0.9607706283038113,0.3903,0,0,"It's okay, nothing special. The final price was $2800 higher than the quote. The engine is bulletproof. Traded in my old hatchback for this."
+R102579,Solano,Vista,4,positive,negative,negative,0.9604140815053316,-0.4387,1,0,"Not happy with this purchase. Bought it for my daily commute. Spent an entire Saturday waiting for someone to look at my car. Scheduled maintenance is a lot more expensive than advertised. Excellent mileage, I fill up once a month."
+R106342,Kestrel,K5,3,neutral,positive,positive,0.9574969042441093,0.9042,0,0,The cabin is quiet and the ride is smooth. Would recommend. Fuel efficiency is outstanding.
+R105772,Aurex,Sprint,3,neutral,positive,positive,0.9514303379338626,0.9749,0,0,"Pretty happy with it so far. Very comfortable seats, great for road trips. Fuel efficiency is outstanding. The final price was $1200 higher than the quote. Starts every morning without fail, even in winter."
+R108570,Kestrel,K3,4,positive,neutral,negative,0.9513455406240527,-0.092,0,0,"It's okay, nothing special. I was treated like an inconvenience the moment I signed the papers."
+R110599,Kestrel,K3,1,negative,positive,positive,0.9510690717565291,0.8555,0,1,Pretty happy with it so far. Maintenance costs are much higher than my last car. Would recommend.
+R100766,Zephyr,Gale,4,positive,neutral,neutral,0.9493450328389682,0.3903,0,0,"It's okay, nothing special. Spent an entire Saturday waiting for someone to look at my car. I barely remember the last time I had to refuel. Plenty of legroom and a lovely interior."
+R106086,Velora,Lumen,2,negative,neutral,neutral,0.949249170886015,0.21,1,0,"It's okay, nothing special. Fuel efficiency is outstanding. The final price was $1000 higher than the quote. Customer support sorted out my warranty claim within a day. The repair bill after the warranty ended was painful."
+R104321,Velora,Strato,5,positive,neutral,neutral,0.9486399179588471,0.0,0,0,Mixed feelings about this one. My wallet is still recovering from the purchase. Bought it for my daily commute.
+R103143,Zephyr,Gale,2,negative,neutral,negative,0.9470813149509522,-0.1905,1,0,"Decent but not great. Getting 44 mpg on the highway, very happy. We use it mostly for school runs. Pricey for a car with such basic features."
+R101013,Tamaru,Hoshi,1,negative,neutral,negative,0.9444267982817455,-0.3491,0,0,Decent but not great. It broke down on the highway with my kids in the car.
+R107281,Tamaru,Hoshi,1,negative,positive,positive,0.9362255161467099,0.802,1,1,Pretty happy with it so far. Routine oil changes are inexpensive. Pricey for a car with such basic features.
+R107893,Solano,Vista,4,positive,neutral,negative,0.9355243748284098,-0.4939,0,0,Mixed feelings about this one. Bought it for my daily commute. Check engine light came on three times in the first year. Overpriced compared to rivals in the same class.
+R102430,Norvik,Tundra,2,negative,positive,positive,0.9339857336052627,0.9259,0,1,Very happy with my purchase. Great value for money. The engine is bulletproof.
+R105675,Aurex,Sprint,1,negative,positive,positive,0.9275123756994427,0.8997,1,1,"Absolutely love this car. Overpriced compared to rivals in the same class. Great experience at the dealership, no pressure at all. The cabin is quiet and the ride is smooth."
+R108397,Solano,Vista,5,positive,neutral,neutral,0.9273816852570387,0.3818,1,0,Mixed feelings about this one. Fuel efficiency is outstanding. Too much road noise in the cabin. The service advisor tried to upsell me on things I did not need.
+R109494,Aurex,Sprint,4,positive,neutral,negative,0.9268449412435128,-0.8731,1,0,Decent but not great. Great value for money. Plenty of legroom and a lovely interior. It broke down on the highway with my kids in the car. Had it for about 4 months now.
+R103691,Norvik,Fjord,3,neutral,positive,positive,0.9178891435119284,0.7003,0,0,Good car with a few small issues. Spare parts are easy to find and reasonably priced.
+R109202,Velora,Strato,3,neutral,positive,positive,0.9058877267779387,0.7964,0,0,Overall a solid car. Great value for money. Bought it for my daily commute.
+R104134,Aurex,Atlas,5,positive,neutral,negative,0.9047858969602035,-0.4215,0,0,Mixed feelings about this one. Traded in my old hatchback for this. The engine stalls at traffic lights randomly.
+R104705,Norvik,Tundra,1,negative,neutral,positive,0.8828994395672735,0.6115,0,1,"Mixed feelings about this one. Getting 52 mpg on the highway, very happy. Check engine light came on three times in the first year."
+R110041,Solano,Vista,3,neutral,negative,neutral,0.8760009911574853,-0.0076,0,0,Stay away. Spare parts take weeks to arrive and are very costly. Felt like I was paying luxury rates for an economy car. Bought it for my daily commute. Nobody at the place I bought it from ever calls back.
+R102151,Kestrel,Ridge,5,positive,negative,negative,0.8683205426932066,-0.5439,0,0,Had it for about 28 months now. The service advisor tried to upsell me on things I did not need. Felt like I was paying luxury rates for an economy car. Would not buy again.
+R109213,Norvik,Tundra,5,positive,negative,positive,0.8641310533197984,0.8176,0,0,"The cabin is quiet and the ride is smooth. Great, the transmission is slipping again. What a thrill."
+R105438,Tamaru,Hoshi,4,positive,negative,positive,0.8394430269261329,0.6808,0,0,Good car with a few small issues. Customer support took 4 weeks to answer a simple warranty claim.
+R105002,Norvik,Tundra,5,positive,neutral,positive,0.8370158972754843,0.7737,1,0,"Mixed feelings about this one. Affordable and very well equipped. Terrible after-sales service, I had to chase them every single time. Super reliable, not a single issue in 6 years."
+R101422,Aurex,Atlas,3,neutral,positive,positive,0.8324515877349754,0.8422,1,0,"Best car I have owned. Fuel economy is nowhere near the advertised number. Traded in my old hatchback for this. Customer support sorted out my warranty claim within a day. Starts every morning without fail, even in winter."
+R103384,Aurex,Atlas,2,negative,neutral,negative,0.8200585161561027,-0.4698,1,0,"Decent but not great. Way too expensive for what you get. Not reliable at all, it has been in the shop four times. The dealer staff were friendly and explained everything clearly."
+R106220,Kestrel,K5,4,positive,negative,positive,0.8183107715365859,0.4404,0,0,Good car with a few small issues. Nobody at the place I bought it from ever calls back.
+R102684,Brixton,Regent,4,positive,negative,negative,0.8136977838543116,-0.4215,0,0,The engine stalls at traffic lights randomly.
+R101200,Velora,Strato,4,positive,negative,negative,0.8009117109589603,-0.4215,0,0,It broke down on the highway with my kids in the car.
+R109481,Aurex,Sprint,1,negative,positive,positive,0.8003357358287143,0.8952,1,1,"Very happy with my purchase. The repair bill after the warranty ended was painful. Excellent mileage, I fill up once a month. Great experience at the dealership, no pressure at all."
+R102493,Velora,Strato,1,negative,positive,positive,0.7936863296992362,0.9122,0,1,"Traded in my old hatchback for this. Super reliable, not a single issue in 3 years. Would recommend. Felt like I was paying luxury rates for an economy car."
+R100044,Aurex,Atlas,3,neutral,positive,positive,0.7827461457743323,0.4588,0,0,The engine is bulletproof.
+R110030,Solano,Vista,1,negative,neutral,neutral,0.7738238752671416,0.0,0,0,Bought it for my daily commute.
+R107362,Zephyr,Drift,4,positive,neutral,neutral,0.7738238752671416,0.0,0,0,Bought it for my daily commute.
+R104903,Tamaru,Hoshi,5,positive,neutral,neutral,0.7738238752671416,0.0,0,0,Bought it for my daily commute.
+R107103,Kestrel,K5,3,neutral,negative,negative,0.7724568425270021,-0.6124,0,0,The dealer staff were rude and kept me waiting for 5 hours.
+R100953,Zephyr,Gale,1,negative,neutral,negative,0.7722573434320007,-0.4019,1,0,Had it for about 19 months now. The ride is harsh over bumps. Towed twice in six months. Customer support sorted out my warranty claim within a day.
+R105359,Kestrel,K3,4,positive,negative,neutral,0.7637170554239995,0.0,0,0,I was treated like an inconvenience the moment I signed the papers. Would buy again.
+R107031,Norvik,Fjord,5,positive,negative,neutral,0.7610406161014671,0.0516,1,0,"Overall a solid car. Excellent mileage, I fill up once a month. Terrible after-sales service, I had to chase them every single time."
+R100521,Aurex,Atlas,3,neutral,positive,positive,0.7585854516427011,0.7096,0,0,The dealer staff were friendly and explained everything clearly.
+R101494,Aurex,Sprint,3,neutral,negative,negative,0.7573261349416776,-0.6124,0,0,Pricey for a car with such basic features. The transmission started slipping at 56k miles.
+R111235,Solano,Mesa,4,positive,negative,neutral,0.7553187045985188,0.2528,0,0,"Good car with a few small issues. Not reliable at all, it has been in the shop four times. My family can sit in it for hours without complaining."
+R109695,Solano,Vista,3,neutral,negative,neutral,0.734720259791419,0.0,0,0,Check engine light came on three times in the first year.
+R111396,Velora,Lumen,3,neutral,positive,positive,0.7304149249906432,0.5719,0,0,The cabin is quiet and the ride is smooth.
+R105240,Kestrel,Ridge,3,neutral,positive,positive,0.7304149249906432,0.5719,0,0,The cabin is quiet and the ride is smooth.
+R103853,Aurex,Nova,3,neutral,negative,neutral,0.7297913986005328,0.2944,1,0,"Lots of car for the outlay. The engine stalls at traffic lights randomly. Getting 49 mpg on the highway, very happy."
+R104799,Zephyr,Gale,4,positive,neutral,positive,0.7269637430947699,0.7184,0,0,Maintenance costs are much higher than my last car. Fuel efficiency is outstanding.
+R108312,Aurex,Sprint,3,neutral,negative,negative,0.721436401611356,-0.7184,0,0,The engine stalls at traffic lights randomly. The seats are hard and my back hurts on long drives.
+R107000,Velora,Strato,4,positive,neutral,positive,0.7193509923109588,0.4215,1,0,Traded in my old hatchback for this. Fuel efficiency is outstanding. Overpriced compared to rivals in the same class.
+R101596,Aurex,Atlas,4,positive,neutral,neutral,0.7112117292215515,0.0,0,0,I am getting only 18 mpg in the city.
+R105329,Velora,Lumen,3,neutral,positive,neutral,0.7062900631230372,0.3612,0,0,Routine oil changes are inexpensive.
+R107986,Velora,Strato,4,positive,neutral,neutral,0.7011639811450558,0.25,0,0,Traded in my old hatchback for this. Maintenance is cheap and simple. The final price was $2700 higher than the quote.
+R111597,Aurex,Nova,1,negative,neutral,neutral,0.6971026846063431,0.25,0,0,Towed twice in six months. Plenty of legroom and a lovely interior. Bought it for my daily commute. I seem to be at the pump every few days.
+R104108,Kestrel,K5,3,neutral,positive,positive,0.6941107535980887,0.8384,0,0,"Very comfortable seats, great for road trips."
+R100979,Aurex,Sprint,5,positive,neutral,negative,0.691622307325507,-0.4404,0,0,Bought it for my daily commute. Priced fairly for the features you get. The repair bill after the warranty ended was painful.
+R109075,Velora,Strato,4,positive,negative,positive,0.6886274992943284,0.668,1,0,"We use it mostly for school runs. Not reliable at all, it has been in the shop four times. Getting 46 mpg on the highway, very happy. Customer support took 7 weeks to answer a simple warranty claim."
+R104593,Aurex,Atlas,3,neutral,negative,negative,0.6815091625546394,-0.34,0,0,The service advisor tried to upsell me on things I did not need.
+R101232,Kestrel,K5,3,neutral,negative,negative,0.6815091625546394,-0.34,0,0,The service advisor tried to upsell me on things I did not need.
+R110455,Velora,Lumen,3,neutral,positive,positive,0.6806924561363616,0.5095,0,0,"Very reliable car, never let me down."
+R107227,Tamaru,Kai,1,negative,positive,positive,0.6802175017956518,0.5859,0,1,Plenty of legroom and a lovely interior.
+R101255,Tamaru,Kai,4,positive,neutral,neutral,0.6766280004825512,0.0,0,0,Bought it for my daily commute. Every trip to the workshop ends with a four-figure invoice.
+R101072,Solano,Vista,4,positive,negative,negative,0.6734696935547485,-0.5435,0,0,"Terrible after-sales service, I had to chase them every single time. My family can sit in it for hours without complaining."
+R101810,Tamaru,Kai,4,positive,neutral,positive,0.6722462549428179,0.7096,0,0,Had it for about 20 months now. The dealer staff were friendly and explained everything clearly. Keeping it on the road is draining my savings.
+R111131,Velora,Strato,5,positive,neutral,positive,0.671744700059745,0.8555,0,0,"Had it for about 20 months now. Super reliable, not a single issue in 3 years. Felt like I was paying luxury rates for an economy car."
+R103839,Kestrel,K5,3,neutral,negative,negative,0.6702478238849331,-0.204,1,0,"Terrible after-sales service, I had to chase them every single time. Very reliable car, never let me down."
+R105191,Kestrel,K5,4,positive,neutral,negative,0.6697312232180157,-0.25,0,0,Bought it for my daily commute. Too much road noise in the cabin.
+R109895,Zephyr,Drift,4,positive,neutral,negative,0.6644802733561447,-0.4404,0,0,Traded in my old hatchback for this. The repair bill after the warranty ended was painful.
+R103852,Aurex,Atlas,4,positive,neutral,neutral,0.6588978420019295,0.0,0,0,We use it mostly for school runs.
+R101396,Zephyr,Drift,4,positive,neutral,neutral,0.6588978420019295,0.0,0,0,We use it mostly for school runs.
+R106700,Kestrel,K5,4,positive,neutral,neutral,0.6588978420019295,0.0,0,0,We use it mostly for school runs.
+R107413,Solano,Vista,3,neutral,negative,negative,0.6576853014917148,-0.2978,0,0,The engine stalls at traffic lights randomly. My family can sit in it for hours without complaining.
+R108143,Solano,Breeze,4,positive,negative,neutral,0.6576321416884345,0.0772,0,0,We use it mostly for school runs. Would recommend. Booked a service appointment & they still lost my paperwork.
+R104506,Velora,Lumen,4,positive,neutral,positive,0.6494443248044922,0.5719,0,0,Had it for about 13 months now. Nobody at the place I bought it from ever calls back. The cabin is quiet and the ride is smooth.
+R105243,Solano,Vista,3,neutral,positive,positive,0.6488169918066244,0.836,0,0,Good car with a few small issues. Fuel efficiency is outstanding. My wallet is still recovering from the purchase.
+R108318,Aurex,Sprint,3,neutral,negative,positive,0.6468977478662673,0.5859,0,0,I was treated like an inconvenience the moment I signed the papers. Plenty of legroom and a lovely interior.
+R110729,Solano,Breeze,1,negative,neutral,negative,0.644357948540351,-0.4588,0,0,Bought it for my daily commute. Pricey for a car with such basic features. Spent an entire Saturday waiting for someone to look at my car.
+R104893,Kestrel,K3,3,neutral,positive,positive,0.6422387710020594,0.7783,0,0,The final price was $3600 higher than the quote. Plenty of legroom and a lovely interior. The engine is bulletproof.
+R102368,Tamaru,Kai,5,positive,neutral,positive,0.6407824192164775,0.7906,0,0,Maintenance is cheap and simple. Fuel efficiency is outstanding.
+R111426,Aurex,Sprint,2,negative,neutral,negative,0.6363807940369195,-0.4215,0,0,Bought it for my daily commute. Towed twice in six months.
+R111292,Norvik,Tundra,4,positive,neutral,neutral,0.6293105494532504,0.0,0,0,Maintenance costs are much higher than my last car.
+R102642,Solano,Vista,4,positive,neutral,positive,0.6282690156455242,0.7174,0,0,"Had it for about 29 months now. Every trip to the workshop ends with a four-figure invoice. Great experience at the dealership, no pressure at all."
+R104565,Aurex,Sprint,4,positive,negative,positive,0.6277533952185939,0.7755,1,0,"Overall a solid car. Very comfortable seats, great for road trips. Dealership staff seemed clueless about their own cars. Financing and insurance cost far more than I expected."
+R105194,Norvik,Tundra,3,neutral,positive,positive,0.6270518160382416,0.5719,0,0,"Excellent mileage, I fill up once a month."
+R101368,Tamaru,Kai,3,neutral,positive,neutral,0.6250730351249528,0.0,0,0,Lots of car for the outlay.
+R103520,Zephyr,Gale,3,neutral,negative,positive,0.6250449927464369,0.8425,1,0,"Got a good deal on it. The engine stalls at traffic lights randomly. Very comfortable seats, great for road trips."
+R109049,Aurex,Atlas,4,positive,neutral,neutral,0.6239602561468177,0.0,0,0,Bought it for my daily commute. Financing and insurance cost far more than I expected.
+R105314,Tamaru,Hoshi,4,positive,neutral,neutral,0.6197716517090748,0.3612,0,0,Bought it for my daily commute. My wallet is still recovering from the purchase. I am getting only 16 mpg in the city. Routine oil changes are inexpensive.
+R107311,Aurex,Sprint,3,neutral,negative,neutral,0.6189846067183977,0.0,0,0,The salesperson promised things the dealer later denied.
+R111528,Kestrel,Ridge,4,positive,neutral,negative,0.6183542678335474,-0.3612,0,0,Traded in my old hatchback for this. Way too expensive for what you get.
+R105911,Norvik,Tundra,3,neutral,positive,positive,0.6182990053591444,0.7351,0,0,"Routine oil changes are inexpensive. Excellent mileage, I fill up once a month. Bought it for my daily commute."
+R108279,Tamaru,Kai,2,negative,neutral,neutral,0.6165485289848203,0.25,1,0,Dealership staff seemed clueless about their own cars. Plenty of legroom and a lovely interior. I barely remember the last time I had to refuel.
+R110237,Tamaru,Hoshi,3,neutral,negative,positive,0.6112853093110042,0.7713,0,0,"Customer support took 4 weeks to answer a simple warranty claim. Getting 48 mpg on the highway, very happy."
+R100372,Solano,Breeze,3,neutral,negative,negative,0.6100751355232319,-0.8074,0,0,We use it mostly for school runs. Got a recall notice for a defect they still have not fixed. Long trips leave me stiff and tired.
+R111758,Velora,Strato,3,neutral,positive,neutral,0.6099452329509644,0.128,1,0,Way too expensive for what you get. The engine is bulletproof.
+R110277,Aurex,Atlas,4,positive,negative,neutral,0.6099178325281677,0.0644,0,0,"Terrible after-sales service, I had to chase them every single time. Starts every morning without fail, even in winter. Would recommend."
+R111785,Tamaru,Hoshi,4,positive,negative,positive,0.6093056129539525,0.9019,0,0,"Good car with a few small issues. Affordable and very well equipped. Nobody at the place I bought it from ever calls back. Getting 44 mpg on the highway, very happy."
+R106726,Velora,Lumen,4,positive,neutral,neutral,0.6000794900530306,0.0,0,0,Traded in my old hatchback for this.
+R103387,Solano,Breeze,5,positive,neutral,neutral,0.6000794900530306,0.0,0,0,Traded in my old hatchback for this.
+R110762,Norvik,Tundra,4,positive,neutral,neutral,0.6000794900530306,0.0,0,0,Traded in my old hatchback for this.
+R108248,Aurex,Nova,5,positive,neutral,neutral,0.6000794900530306,0.0,0,0,Traded in my old hatchback for this.
+R100667,Tamaru,Kai,4,positive,neutral,neutral,0.6000794900530306,0.0,0,0,Traded in my old hatchback for this.
+R103131,Solano,Breeze,4,positive,neutral,neutral,0.6000794900530306,0.0,0,0,Traded in my old hatchback for this.
+R106444,Zephyr,Gale,2,negative,neutral,neutral,0.6000794900530306,0.0,0,0,Traded in my old hatchback for this.
+R103430,Solano,Mesa,4,positive,neutral,negative,0.5973030672118322,-0.4404,0,0,The repair bill after the warranty ended was painful.
+R107382,Kestrel,Ridge,4,positive,neutral,neutral,0.5958175687371801,0.228,1,0,Had it for about 18 months now. The cabin is quiet and the ride is smooth. Scheduled maintenance is a lot more expensive than advertised.
+R111624,Norvik,Fjord,3,neutral,negative,neutral,0.5928745393609779,0.0,0,0,Had it for about 3 months now. Nobody at the place I bought it from ever calls back.
+R101275,Solano,Mesa,4,positive,neutral,neutral,0.5805481118854655,0.0,0,0,Bought it for my daily commute. Running costs at the workshop have been minimal.
+R109873,Norvik,Fjord,3,neutral,negative,negative,0.5803294239466642,-0.4215,0,0,Dealership staff seemed clueless about their own cars. The final price was $3600 higher than the quote.
+R101190,Kestrel,Ridge,4,positive,neutral,neutral,0.5799300823150426,0.2023,1,0,The engine is bulletproof. Legroom in the back is a joke.
+R111964,Tamaru,Hoshi,4,positive,negative,negative,0.5794704778242392,-0.2944,0,0,Overall a solid car. Scheduled maintenance is a lot more expensive than advertised.
+R107569,Velora,Lumen,4,positive,neutral,positive,0.57665491914274,0.5095,0,0,"Traded in my old hatchback for this. Keeping it on the road is draining my savings. Very reliable car, never let me down."
+R105694,Solano,Breeze,4,positive,neutral,negative,0.576261830751702,-0.3071,0,0,Traded in my old hatchback for this. Overpriced compared to rivals in the same class. The team that looks after my car treats me like family.
+R102526,Aurex,Sprint,4,positive,neutral,neutral,0.5749613625531811,0.0,0,0,Bought it for my daily commute. Brake pads needed replacing at only 39k miles. Lots of car for the outlay.
+R106724,Norvik,Tundra,3,neutral,negative,positive,0.5726692562248757,0.4019,0,0,Customer support took 5 weeks to answer a simple warranty claim. Traded in my old hatchback for this.
+R100017,Kestrel,K3,3,neutral,negative,negative,0.5662779327125015,-0.4019,0,0,The team that looks after my car treats me like family. Got a recall notice for a defect they still have not fixed.
+R111303,Velora,Strato,4,positive,negative,neutral,0.5659631754657078,0.0772,1,0,"Overall a solid car. We use it mostly for school runs. The dealer staff were rude and kept me waiting for 5 hours. Excellent mileage, I fill up once a month."
+R101466,Tamaru,Hoshi,4,positive,negative,positive,0.5655396980576514,0.9145,1,0,"Good car with a few small issues. Excellent mileage, I fill up once a month. The transmission started slipping at 19k miles. Very comfortable seats, great for road trips."
+R108817,Norvik,Fjord,4,positive,neutral,negative,0.5631029862282287,-0.1134,0,0,We use it mostly for school runs. Honestly not good value for money at this price point.
+R107182,Zephyr,Drift,4,positive,neutral,neutral,0.562421421111092,0.024,1,0,"Overpriced compared to rivals in the same class. Very reliable car, never let me down."
+R107193,Kestrel,K5,4,positive,neutral,neutral,0.562421421111092,0.024,1,0,"Overpriced compared to rivals in the same class. Very reliable car, never let me down."
+R100418,Aurex,Nova,4,positive,neutral,negative,0.5615462714885053,-0.4939,0,0,Had it for about 14 months now. The seats are hard and my back hurts on long drives.
+R111935,Kestrel,K5,4,positive,neutral,neutral,0.5606456085369508,0.2732,1,0,"Bought it for my daily commute. Excellent mileage, I fill up once a month. The ride is harsh over bumps."
+R102928,Solano,Mesa,3,neutral,positive,neutral,0.558204061044975,0.3612,0,0,We use it mostly for school runs. The team that looks after my car treats me like family.
+R108591,Zephyr,Drift,4,positive,neutral,neutral,0.5572735291566443,0.0,0,0,Had it for about 28 months now.
+R109982,Kestrel,K5,3,neutral,negative,negative,0.5566626505194483,-0.6369,0,0,Got a recall notice for a defect they still have not fixed. We use it mostly for school runs.
+R107852,Kestrel,K5,4,positive,negative,positive,0.5552393634066644,0.7351,0,0,Routine oil changes are inexpensive. I never know if it will start in the morning. The cabin is quiet and the ride is smooth.
+R109261,Solano,Breeze,1,negative,neutral,positive,0.5530508937063681,0.7845,0,1,"Nobody at the place I bought it from ever calls back. Super reliable, not a single issue in 4 years. Maintenance costs are much higher than my last car."
+R110718,Kestrel,K5,2,negative,neutral,negative,0.5528034764197247,-0.34,1,0,Overpriced compared to rivals in the same class. Fuel efficiency is outstanding. Got a recall notice for a defect they still have not fixed.
+R107950,Zephyr,Gale,1,negative,neutral,negative,0.5517626244651881,-0.4404,0,0,The team that looks after my car treats me like family. Pricey for a car with such basic features. The seats are hard & my back hurts on long drives. It spends more time at the workshop than in my driveway.
+R103715,Solano,Mesa,3,neutral,negative,negative,0.5514803152886498,-0.5994,1,0,The dealer staff were rude and kept me waiting for 2 hours. The repair bill after the warranty ended was painful. The engine is bulletproof.
+R107255,Zephyr,Gale,3,neutral,positive,positive,0.5514089290984759,0.5719,0,0,"The final price was $900 higher than the quote. We use it mostly for school runs. Excellent mileage, I fill up once a month."
+R103742,Tamaru,Hoshi,2,negative,neutral,negative,0.5491444131335121,-0.7845,0,0,Way too expensive for what you get. The ride is harsh over bumps. Towed twice in six months.
+R106095,Tamaru,Kai,3,neutral,negative,positive,0.5490545903376264,0.7089,1,0,"The engine stalls at traffic lights randomly. The cabin is quiet and the ride is smooth. Getting 50 mpg on the highway, very happy."
+R103979,Norvik,Fjord,4,positive,negative,negative,0.5484207107548243,-0.3628,0,0,Good car with a few small issues. Dealership staff seemed clueless about their own cars. Had it for about 10 months now. Overpriced compared to rivals in the same class. My family can sit in it for hours without complaining.
+R106001,Kestrel,K5,4,positive,negative,negative,0.5458700967630504,-0.4588,0,0,Mileage is disappointing for a car this size.
+R108615,Zephyr,Gale,2,negative,neutral,positive,0.5434108037297415,0.5168,1,1,"The service advisor tried to upsell me on things I did not need. Very comfortable seats, great for road trips. Very reliable car, never let me down."
+R108459,Kestrel,K3,4,positive,negative,neutral,0.5429749060264561,0.237,1,0,"Got a recall notice for a defect they still have not fixed. Very comfortable seats, great for road trips. Excellent mileage, I fill up once a month."
+R104205,Velora,Lumen,3,neutral,negative,negative,0.5428397758165319,-0.2732,1,0,The repair bill after the warranty ended was painful. Fuel efficiency is outstanding. We use it mostly for school runs. Got a recall notice for a defect they still have not fixed.
+R101357,Aurex,Sprint,4,positive,neutral,positive,0.5421119716134337,0.8176,0,0,The team that looks after my car treats me like family. Maintenance costs are much higher than my last car. Fuel efficiency is outstanding.
+R100655,Tamaru,Kai,3,neutral,negative,negative,0.5421064983158983,-0.25,0,0,Nobody at the place I bought it from ever calls back. Too much road noise in the cabin. I barely remember the last time I had to refuel. Lots of car for the outlay.
+R102149,Aurex,Atlas,3,neutral,negative,negative,0.5412625132880207,-0.4201,0,0,Spare parts take weeks to arrive and are very costly.
+R111562,Norvik,Fjord,3,neutral,negative,neutral,0.5407285503055037,0.0,0,0,I never know if it will start in the morning. We use it mostly for school runs.
+R101835,Norvik,Fjord,4,positive,negative,positive,0.540391268767534,0.6486,0,0,Overall a solid car. The salesperson promised things the dealer later denied. The cabin is quiet and the ride is smooth.
+R109853,Solano,Vista,2,negative,neutral,negative,0.5398987807292874,-0.5859,0,0,My wallet is still recovering from the purchase. Fuel economy is nowhere near the advertised number. Long trips leave me stiff and tired.
+R107767,Norvik,Fjord,2,negative,neutral,negative,0.5391053612585223,-0.2023,0,0,Had it for about 13 months now. Spent an entire Saturday waiting for someone to look at my car.
+R104597,Aurex,Atlas,4,positive,neutral,positive,0.5354365487011037,0.7421,1,0,"Great experience at the dealership, no pressure at all. Felt like I was paying luxury rates for an economy car. Legroom in the back is a joke."
+R109443,Velora,Strato,4,positive,negative,negative,0.5315568819177752,-0.296,0,0,My wallet is still recovering from the purchase. I am getting only 17 mpg in the city. Would buy again. Legroom in the back is a joke.
+R102124,Zephyr,Drift,2,negative,neutral,negative,0.5310396695448144,-0.25,1,0,"The repair bill after the warranty ended was painful. Excellent mileage, I fill up once a month. Towed twice in six months."
+R108367,Brixton,Regent,4,positive,negative,neutral,0.5293448595743168,0.0,0,0,Nobody at the place I bought it from ever calls back. Lots of car for the outlay. Running costs at the workshop have been minimal.
+R101391,Norvik,Tundra,2,negative,neutral,positive,0.5280290412722481,0.4003,0,0,Bought it for my daily commute. My family can sit in it for hours without complaining. The salesperson promised things the dealer later denied. Every oil change seems to come with a surprise add-on.
+R107937,Velora,Strato,3,neutral,positive,positive,0.5272993144619147,0.7184,0,0,Fuel efficiency is outstanding.
+R101993,Aurex,Nova,2,negative,neutral,positive,0.5267460162674782,0.5719,0,1,Had it for about 12 months now. The cabin is quiet and the ride is smooth. I am getting only 21 mpg in the city. Check engine light came on three times in the first year.
+R111605,Solano,Mesa,4,positive,negative,positive,0.5236815789644073,0.7184,1,0,"Overall a solid car. Super reliable, not a single issue in 5 years. The salesperson promised things the dealer later denied. Way too expensive for what you get."
+R102525,Tamaru,Kai,4,positive,neutral,negative,0.5207131251699636,-0.3818,0,0,The ride is harsh over bumps.
+R101752,Kestrel,K3,4,positive,neutral,positive,0.5179149747913239,0.9179,1,0,"The repair bill after the warranty ended was painful. Very comfortable seats, great for road trips. Super reliable, not a single issue in 7 years."
+R106439,Norvik,Tundra,1,negative,neutral,neutral,0.5167920904152181,0.1511,0,0,Bought it for my daily commute. My family can sit in it for hours without complaining.
+R109114,Solano,Vista,3,neutral,negative,neutral,0.5167733294318577,0.0,0,0,The salesperson promised things the dealer later denied. I barely remember the last time I had to refuel.
+R103436,Solano,Breeze,3,neutral,positive,neutral,0.5165044866103762,0.0387,0,0,Honestly not good value for money at this price point. My family can sit in it for hours without complaining.
+R102588,Velora,Strato,4,positive,negative,positive,0.5156601185625168,0.9118,0,0,"Pretty happy with it so far. Maintenance is cheap and simple. Check engine light came on three times in the first year. Excellent mileage, I fill up once a month."
+R101917,Aurex,Nova,4,positive,negative,neutral,0.5141114154013111,0.3626,1,0,"Overall a solid car. Scheduled maintenance is a lot more expensive than advertised. Excellent mileage, I fill up once a month. My wallet is still recovering from the purchase."
+R105915,Kestrel,K3,5,positive,neutral,neutral,0.5079599039123734,0.0,0,0,Had it for about 25 months now.
+R104539,Kestrel,K5,2,negative,neutral,negative,0.5048312668396895,-0.4215,0,0,Dealership staff seemed clueless about their own cars.
+R105862,Norvik,Fjord,3,neutral,positive,positive,0.5012905711255525,0.9153,0,0,"The dealer staff were friendly and explained everything clearly. Keeping it on the road is draining my savings. Super reliable, not a single issue in 7 years."
+R111354,Solano,Mesa,4,positive,negative,positive,0.49897083400715314,0.5106,0,0,Overall a solid car. We use it mostly for school runs. Customer support took 8 weeks to answer a simple warranty claim. Would buy again.
+R107457,Velora,Lumen,3,neutral,positive,neutral,0.4974304619214843,0.3612,0,0,We use it mostly for school runs. Routine oil changes are inexpensive.
+R104057,Kestrel,K5,3,neutral,negative,neutral,0.49669509490544284,0.0,0,0,Keeping it on the road is draining my savings.
+R100109,Norvik,Tundra,5,positive,neutral,negative,0.4930001981260962,-0.6049,0,0,"Service at the dealership was a nightmare, nobody returned my calls. Honestly not good value for money at this price point."
+R111245,Tamaru,Kai,4,positive,neutral,positive,0.49226739942949566,0.7184,0,0,We use it mostly for school runs. Fuel efficiency is outstanding.
+R110162,Aurex,Nova,3,neutral,negative,negative,0.4922431278121491,-0.6124,1,0,Overpriced compared to rivals in the same class. Maintenance is cheap and simple. The engine stalls at traffic lights randomly.
+R101130,Tamaru,Hoshi,3,neutral,negative,positive,0.49018291034469524,0.8313,0,0,"I was treated like an inconvenience the moment I signed the papers. Getting 54 mpg on the highway, very happy. Plenty of legroom and a lovely interior."
+R108837,Zephyr,Gale,4,positive,neutral,neutral,0.4850550820952574,0.0,0,0,Traded in my old hatchback for this. Priced fairly for the features you get.
+R101095,Kestrel,Ridge,4,positive,neutral,neutral,0.4850550820952574,0.0,0,0,Traded in my old hatchback for this. Priced fairly for the features you get.
+R111471,Solano,Breeze,4,positive,neutral,negative,0.4843637233025847,-0.4767,0,0,Long trips leave me stiff and tired.
+R111995,Solano,Mesa,4,positive,negative,negative,0.4842122557164105,-0.4201,0,0,Scheduled maintenance is a lot more expensive than advertised.
+R109827,Aurex,Atlas,4,positive,negative,negative,0.4842122557164105,-0.4201,0,0,Scheduled maintenance is a lot more expensive than advertised.
+R111669,Aurex,Sprint,5,positive,neutral,positive,0.48277148096310296,0.8271,0,0,Customer support sorted out my warranty claim within a day. Keeping it on the road is draining my savings. Fuel efficiency is outstanding.
+R105896,Aurex,Sprint,2,negative,neutral,positive,0.48261856661144403,0.7845,0,1,"We use it mostly for school runs. Super reliable, not a single issue in 6 years. I was treated like an inconvenience the moment I signed the papers."
+R103034,Norvik,Tundra,2,negative,positive,negative,0.48232409537490706,-0.1779,0,0,The team that looks after my car treats me like family. Overpriced compared to rivals in the same class.
+R107846,Zephyr,Drift,3,neutral,negative,positive,0.4811673388407582,0.4588,1,0,Maintenance is cheap and simple. Plenty of legroom and a lovely interior. It broke down on the highway with my kids in the car.
+R101549,Aurex,Sprint,3,neutral,negative,negative,0.48080495759119957,-0.4215,0,0,Service appointments are quick and the advisor keeps me updated. The engine stalls at traffic lights randomly.
+R103601,Aurex,Nova,3,neutral,negative,positive,0.47977365217619783,0.5859,0,0,Nobody at the place I bought it from ever calls back. Plenty of legroom and a lovely interior.
+R103196,Solano,Breeze,3,neutral,positive,positive,0.47916955588171667,0.5859,0,0,Plenty of legroom and a lovely interior. We use it mostly for school runs.
+R100164,Zephyr,Drift,4,positive,neutral,positive,0.479030807955712,0.8357,1,0,"The dealer staff were friendly and explained everything clearly. Too much road noise in the cabin. Getting 45 mpg on the highway, very happy. The final price was $2400 higher than the quote."
+R109682,Kestrel,K5,3,neutral,positive,positive,0.4783010562491174,0.7845,0,0,"My wallet is still recovering from the purchase. We use it mostly for school runs. Super reliable, not a single issue in 7 years."
+R109817,Norvik,Fjord,4,positive,neutral,neutral,0.47757527071116185,0.1511,0,0,Maintenance costs are much higher than my last car. My family can sit in it for hours without complaining.
+R105484,Tamaru,Kai,3,neutral,negative,neutral,0.47755980834202966,0.0,0,0,Every trip to the workshop ends with a four-figure invoice.
+R104841,Solano,Mesa,4,positive,negative,neutral,0.47755980834202966,0.0,0,0,Every trip to the workshop ends with a four-figure invoice.
+R108425,Kestrel,K5,3,neutral,negative,positive,0.47636187789411066,0.5719,0,0,I was treated like an inconvenience the moment I signed the papers. The cabin is quiet and the ride is smooth. Bought it for my daily commute.
+R106948,Aurex,Nova,4,positive,neutral,positive,0.475337613577618,0.8176,0,0,We use it mostly for school runs. Maintenance is cheap and simple. Great value for money.
+R105018,Aurex,Sprint,2,negative,neutral,negative,0.47451621182306963,-0.6597,0,0,Dealership staff seemed clueless about their own cars. The ride is harsh over bumps. I barely remember the last time I had to refuel. Lots of car for the outlay.
+R106332,Tamaru,Hoshi,3,neutral,negative,positive,0.47450433054937935,0.5095,0,0,"Nobody at the place I bought it from ever calls back. Every trip to the workshop ends with a four-figure invoice. Very reliable car, never let me down."
+R110115,Aurex,Sprint,4,positive,neutral,positive,0.47340190957884354,0.5095,0,0,"Traded in my old hatchback for this. Very reliable car, never let me down. Financing and insurance cost far more than I expected."
+R107176,Zephyr,Drift,4,positive,negative,neutral,0.47244710713600774,0.0772,0,0,Good car with a few small issues. The ride is harsh over bumps. I am getting only 17 mpg in the city.
+R100747,Velora,Strato,3,neutral,positive,positive,0.47220444951107043,0.659,0,0,"Every oil change seems to come with a surprise add-on. I barely remember the last time I had to refuel. Very reliable car, never let me down."
+R109228,Velora,Strato,3,neutral,negative,neutral,0.4719471902083314,0.25,1,0,Running costs at the workshop have been minimal. It broke down on the highway with my kids in the car. Plenty of legroom and a lovely interior.
+R111500,Tamaru,Kai,4,positive,neutral,neutral,0.47106544720288146,0.1779,1,0,Had it for about 28 months now. Mileage is disappointing for a car this size. The cabin is quiet and the ride is smooth.
+R110328,Norvik,Tundra,4,positive,neutral,positive,0.4707538320427889,0.6765,1,0,Honestly not good value for money at this price point. Fuel efficiency is outstanding.
+R106722,Norvik,Tundra,4,positive,neutral,positive,0.4700482163116758,0.7902,0,0,"Traded in my old hatchback for this. Very reliable car, never let me down. The cabin is quiet and the ride is smooth. I was treated like an inconvenience the moment I signed the papers."
+R103619,Kestrel,K5,3,neutral,negative,positive,0.46772854563540334,0.7783,1,0,The dealer staff were friendly and explained everything clearly. It broke down on the highway with my kids in the car. The cabin is quiet and the ride is smooth.
+R109392,Solano,Vista,3,neutral,negative,negative,0.46657185292592485,-0.0754,0,0,Felt like I was paying luxury rates for an economy car. Scheduled maintenance is a lot more expensive than advertised.
+R106376,Velora,Strato,4,positive,neutral,negative,0.4647424023350304,-0.296,0,0,Pricey for a car with such basic features.
+R106799,Tamaru,Hoshi,4,positive,neutral,negative,0.4647424023350304,-0.296,0,0,Pricey for a car with such basic features.
+R105613,Norvik,Tundra,4,positive,negative,positive,0.4638377116365319,0.5423,0,0,"Overall a solid car. We use it mostly for school runs. Excellent mileage, I fill up once a month. Spent an entire Saturday waiting for someone to look at my car."
+R110182,Kestrel,K5,4,positive,neutral,positive,0.4622463523922715,0.8061,0,0,Traded in my old hatchback for this. Great value for money.
+R100005,Aurex,Nova,3,neutral,positive,positive,0.4621879625367872,0.8341,1,0,"Got a good deal on it. Mileage is disappointing for a car this size. Traded in my old hatchback for this. Very comfortable seats, great for road trips."
+R108217,Solano,Mesa,5,positive,neutral,positive,0.46152233533790166,0.5719,1,0,"Overpriced compared to rivals in the same class. Super reliable, not a single issue in 7 years. Running costs at the workshop have been minimal."
+R110763,Aurex,Atlas,4,positive,neutral,negative,0.4592797214385107,-0.1134,0,0,Honestly not good value for money at this price point.
+R107308,Aurex,Atlas,4,positive,neutral,neutral,0.4587355866319151,0.1511,0,0,Traded in my old hatchback for this. My family can sit in it for hours without complaining.
+R104002,Kestrel,Ridge,4,positive,neutral,negative,0.45651553157201324,-0.1326,0,0,Traded in my old hatchback for this. My family can sit in it for hours without complaining. Felt like I was paying luxury rates for an economy car.
+R111219,Solano,Mesa,4,positive,negative,positive,0.4545383696665592,0.7579,0,0,Customer support took 7 weeks to answer a simple warranty claim. Plenty of legroom and a lovely interior.
+R111555,Aurex,Atlas,4,positive,neutral,neutral,0.45219973606165625,0.1027,1,0,Every oil change seems to come with a surprise add-on. Fuel economy is nowhere near the advertised number.
+R109079,Aurex,Sprint,4,positive,neutral,neutral,0.45116809726593443,0.101,1,0,"The repair bill after the warranty ended was painful. I barely remember the last time I had to refuel. Very reliable car, never let me down."
+R108622,Velora,Strato,4,positive,negative,negative,0.4452791706449925,-0.0772,0,0,Good car with a few small issues. The seats are hard and my back hurts on long drives. Traded in my old hatchback for this. Keeping it on the road is draining my savings.
+R103845,Kestrel,K5,4,positive,neutral,neutral,0.4374292128903826,0.0,0,0,We use it mostly for school runs. I barely remember the last time I had to refuel.
+R110252,Norvik,Tundra,4,positive,neutral,positive,0.4339386000497307,0.4003,0,0,Every oil change seems to come with a surprise add-on. My family can sit in it for hours without complaining.
+R105617,Zephyr,Drift,4,positive,neutral,positive,0.4314480091844067,0.7845,0,0,"We use it mostly for school runs. I am getting only 17 mpg in the city. Super reliable, not a single issue in 7 years."
+R107862,Tamaru,Kai,4,positive,neutral,positive,0.4309843289380247,0.5719,0,0,Traded in my old hatchback for this. Financing and insurance cost far more than I expected. I barely remember the last time I had to refuel. Keeping it on the road is draining my savings. The cabin is quiet and the ride is smooth.
+R100528,Zephyr,Gale,3,neutral,positive,positive,0.4273182382784751,0.9183,0,0,"Affordable and very well equipped. Getting 46 mpg on the highway, very happy. Plenty of legroom and a lovely interior. Bought it for my daily commute. Every trip to the workshop ends with a four-figure invoice."
+R110152,Aurex,Atlas,3,neutral,negative,positive,0.4248075295553011,0.5413,1,0,"Got a recall notice for a defect they still have not fixed. The cabin is quiet and the ride is smooth. Getting 51 mpg on the highway, very happy."
+R111255,Kestrel,K3,3,neutral,negative,negative,0.4236098072853148,-0.3802,0,0,"The dealer staff were rude and kept me waiting for 3 hours. Honestly not good value for money at this price point. Starts every morning without fail, even in winter."
+R900031,Velora,Strato,5,positive,neutral,neutral,0.4191501469813829,0.0,0,0,Financing and insurance cost far more than I expected.
+R108336,Zephyr,Gale,2,negative,neutral,positive,0.41212900651102,0.7856,1,1,"Great experience at the dealership, no pressure at all. Getting 53 mpg on the highway, very happy. It broke down on the highway with my kids in the car."
+R104971,Zephyr,Gale,3,neutral,positive,negative,0.4115108477157758,-0.3612,0,0,Way too expensive for what you get.
+R111477,Norvik,Fjord,3,neutral,negative,neutral,0.4094983617448376,0.2263,1,0,Bought it for my daily commute. Got a good deal on it. The engine is bulletproof. The dealer staff were rude and kept me waiting for 3 hours.
+R104948,Aurex,Sprint,4,positive,neutral,positive,0.40338082911145,0.5095,0,0,"Financing and insurance cost far more than I expected. Brake pads needed replacing at only 59k miles. Very reliable car, never let me down."
+R102715,Aurex,Atlas,4,positive,neutral,neutral,0.39844020254357704,0.1511,0,0,My family can sit in it for hours without complaining. I seem to be at the pump every few days.
+R100391,Solano,Vista,4,positive,neutral,neutral,0.39782172480246497,0.2006,1,0,"Overpriced compared to rivals in the same class. Getting 57 mpg on the highway, very happy."
+R106783,Zephyr,Drift,4,positive,neutral,negative,0.3974578945904516,-0.1531,0,0,Had it for about 9 months now. Long trips leave me stiff and tired. Routine oil changes are inexpensive.
+R103988,Solano,Mesa,4,positive,negative,neutral,0.39613119256671553,0.0534,1,0,Scheduled maintenance is a lot more expensive than advertised. The engine is bulletproof.
+R107644,Solano,Vista,2,negative,neutral,neutral,0.39598907576100156,0.0,0,0,Financing & insurance cost far more than I expected.
+R107593,Tamaru,Kai,4,positive,neutral,neutral,0.39598907576100156,0.0,0,0,Financing & insurance cost far more than I expected.
+R103207,Tamaru,Hoshi,4,positive,neutral,neutral,0.3952561391122409,0.0,0,0,The final price was $2400 higher than the quote.
+R102561,Tamaru,Hoshi,5,positive,negative,positive,0.3886527682636664,0.8126,0,0,"It spends more time at the workshop than in my driveway. Would buy again. The cabin is quiet and the ride is smooth. Excellent mileage, I fill up once a month."
+R101660,Tamaru,Kai,5,positive,neutral,neutral,0.38811201678590274,0.1027,1,0,Had it for about 21 months now. Would buy again. Every oil change seems to come with a surprise add-on. Fuel economy is nowhere near the advertised number.
+R105524,Velora,Strato,3,neutral,positive,positive,0.3870510808583772,0.9201,0,0,"Felt like I was paying luxury rates for an economy car. Keeping it on the road is draining my savings. Super reliable, not a single issue in 5 years. Excellent mileage, I fill up once a month."
+R104318,Kestrel,K5,4,positive,neutral,positive,0.3867881879266507,0.8885,0,0,The team that looks after my car treats me like family. Great value for money. It spends more time at the workshop than in my driveway. Routine oil changes are inexpensive.
+R103223,Aurex,Atlas,4,positive,neutral,neutral,0.38023668095648444,0.0,0,0,My wallet is still recovering from the purchase.
+R104136,Velora,Strato,4,positive,neutral,neutral,0.38023668095648444,0.0,0,0,My wallet is still recovering from the purchase.
+R108118,Norvik,Tundra,4,positive,neutral,neutral,0.38023668095648444,0.0,0,0,My wallet is still recovering from the purchase.
+R104427,Tamaru,Hoshi,5,positive,neutral,neutral,0.3774500728184802,0.3612,0,0,Felt like I was paying luxury rates for an economy car.
+R105135,Aurex,Sprint,3,neutral,negative,positive,0.37240512057551656,0.8384,0,0,"Brake pads needed replacing at only 57k miles. Very comfortable seats, great for road trips."
+R103751,Kestrel,K5,5,positive,negative,negative,0.3694221042662486,-0.4588,0,0,The final price was $900 higher than the quote. Mileage is disappointing for a car this size.
+R101658,Kestrel,K3,4,positive,neutral,positive,0.35769098901371255,0.5267,0,0,Great value for money. Long trips leave me stiff and tired.
