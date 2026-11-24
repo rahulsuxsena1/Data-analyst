@@ -1,0 +1,11 @@
+step,rows_before,rows_after,note
+Load raw export,12360,12360,11 columns
+Drop exact duplicate rows,12360,12120,export glitch: identical rows
+Standardise brand names,12120,12120,"878 variants mapped (case, spacing, typos, aliases); 0 unmappable dropped"
+Standardise model names,12120,12120,distinct models 36 -> 18
+"Parse ratings, drop missing/out-of-scale",12120,11869,"178 missing, 73 outside 1-5 (0, 6, 10, -1). Dropped: the rating is the target for every question"
+"Parse 3 date formats, drop missing/future",11869,11726,"120 missing, 23 after extraction date. Dropped: trend questions need a date"
+Validate model year,11726,11726,"47 impossible values (2202, 1900, 0, blank) set to null, rows kept"
+"Clean text (HTML, entities, spaces), drop empty",11726,11610,116 empty or 'N/A' reviews dropped: nothing to analyse
+Drop near-duplicates (re-posts),11610,11496,same reviewer + text + date
+Add derived columns,11496,11496,"year, month, rating band, weak sentiment label, word count, car age"

@@ -13,9 +13,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "src"))
 sys.path.insert(0, str(Path(__file__).parent / "powerbi"))
+sys.path.insert(0, str(Path(__file__).parent / "site"))
 
 import build_db  # noqa: E402
 import build_pbip  # noqa: E402
+import build_site  # noqa: E402
 import charts  # noqa: E402
 import clean  # noqa: E402
 import drivers  # noqa: E402
@@ -42,6 +44,7 @@ STEPS = [
     ("6  Generate Power BI project (PBIP)", build_pbip.main, True),
     ("   Charts", charts.main, True),
     ("   Validate against planted signals", validate_planted.main, not REAL),
+    ("   Build showcase site data", build_site.main, True),
 ]
 
 if __name__ == "__main__":

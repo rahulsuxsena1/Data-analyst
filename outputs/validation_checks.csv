@@ -1,0 +1,10 @@
+signal,planted,found,result
+P1a. Most damaging theme,service: largest rating penalty x frequency (planted effect -1.45),impact rank #1 = service; 9.6 stars lost per 100 reviews,PASS
+P1b. Norvik service deteriorating,negative-service probability rises every year 2020 -> 2025,share of Norvik reviews with a service complaint: 8% (2020) -> 19% (2025),PASS
+P2a. Defective cohort found by SQL,Velora Strato MY2022 (and partly MY2023): transmission defect from Sep 2022,"q09 worst cohort = Velora Strato 2022 (avg 2.82, 44.6% negative)",PASS
+P2b. Early-warning alert,defect starts 2022-09 (2022Q3),Velora reliability alert in 2022Q4; 1-2 star share never triggered an alert; 4 other alert(s) were false alarms,PASS
+P3. 'Most common' != 'most damaging',"price: most frequent complaint, smallest rating effect (-0.3)","price naive rank #1, impact rank #5 (-0.18 stars per complaint)",PASS
+P4. Newer model years more reliable,negative-reliability probability falls 3 points per model year,reliability complaints: 7.5% (3 oldest MYs) -> 4.3% (3 newest),PASS
+P5. Small-sample brand handled with uncertainty,"Brixton: ~1% of reviews, genuinely +0.5 stars","98 reviews, CI 3.6x wider than a typical brand; shrunk 4.15 -> 4.06, still #1",PASS
+P6. Tamaru praised for mileage,"Tamaru: mileage mentioned 50%, negative only 8%",positive mileage mentions: Tamaru 38% vs others avg 14%,PASS
+Extra. East region dealers,East: +15 points negative-service probability,worst region = East (40.1% negative vs 28.9% elsewhere),PASS

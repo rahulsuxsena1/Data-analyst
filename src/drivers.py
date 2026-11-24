@@ -143,6 +143,9 @@ def main():
     br = brand_ranking(df)
     br.to_csv(OUT / "brand_ranking.csv", index=False)
     print(br[["brand", "reviews", "avg_rating", "shrunk_mean", "raw_rank", "fair_rank"]].to_string(index=False))
+    trend = df.assign(group=np.where(df["brand"] == "Norvik", "Norvik", "All other brands")) \
+        .groupby(["review_year", "group"])["neg_service"].mean().unstack().round(4)
+    trend.reset_index().to_csv(OUT / "service_trend_norvik.csv", index=False)
     sc = scenarios(df, coefs)
     sc.to_csv(OUT / "scenarios.csv", index=False)
     print(sc[["scenario", "complaints_removed", "scope_avg_before", "scope_avg_after", "portfolio_avg_change"]].to_string(index=False))

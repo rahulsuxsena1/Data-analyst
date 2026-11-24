@@ -198,6 +198,10 @@ def write_log(log: Log, n0: int, n1: int):
     ]
     LOG.parent.mkdir(parents=True, exist_ok=True)
     LOG.write_text("\n".join(lines) + "\n")
+    out = ROOT / "outputs"
+    out.mkdir(exist_ok=True)
+    pd.DataFrame(log.rows, columns=["step", "rows_before", "rows_after", "note"]).to_csv(
+        out / "cleaning_steps.csv", index=False)
 
 
 if __name__ == "__main__":

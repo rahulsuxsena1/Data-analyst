@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automotive Customer Sentiment &amp; Business Intelligence</title>
+<meta name="description" content="Automotive Customer Sentiment &amp; Business Intelligence: an end-to-end data analytics project. Python, SQL, NLP, statistics and Power BI. The most common complaint isn't the one worth fixing.">
+<meta property="og:title" content="Automotive Customer Sentiment &amp; Business Intelligence">
+<meta property="og:description" content="Python · SQL · NLP · statistics · Power BI. A portfolio project with an early-warning system and a pipeline validated against planted ground truth.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232a78d6'/%3E%3Crect x='7' y='17' width='4' height='8' rx='1.5' fill='white'/%3E%3Crect x='14' y='11' width='4' height='14' rx='1.5' fill='white'/%3E%3Crect x='21' y='7' width='4' height='18' rx='1.5' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><rect x="7" y="17" width="4" height="8" rx="1.5" fill="#fff"/><rect x="14" y="11" width="4" height="14" rx="1.5" fill="#fff"/><rect x="21" y="7" width="4" height="18" rx="1.5" fill="#fff"/></svg><span class="brand-full">Automotive Customer Sentiment &amp; BI</span><span class="brand-short">Automotive Sentiment &amp; BI</span></a>
+    <nav aria-label="Sections">
+      <a href="#finding">Finding</a>
+      <a href="#warning">Early warning</a>
+      <a href="#brands">Brands</a>
+      <a href="#recommendations">Recommendations</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#validation">Validation</a>
+      <a href="#method">Method</a>
+    </nav>
+    <a class="btn btn-small" id="nav-repo" href="#">View code</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero wrap">
+    <p class="eyebrow">Data analytics portfolio project · Python · SQL · NLP · Power BI</p>
+    <h1>Automotive Customer Sentiment &amp; Business Intelligence</h1>
+    <p class="tagline">The most common complaint isn't the one worth fixing.</p>
+    <p class="lede">A car company gets thousands of reviews. I built a pipeline that cleans them, finds the complaint
+      themes, measures how much each one actually costs the star rating, and raises an alert when a new problem appears,
+      then shows it all in a Power BI dashboard.</p>
+    <div class="hero-actions">
+      <a class="btn" id="hero-repo" href="#">View the code</a>
+      <a class="btn btn-ghost" id="hero-report" href="#">Read the full report</a>
+    </div>
+    <p class="notice"><span class="dot" aria-hidden="true"></span>
+      <strong>Synthetic data.</strong> Brands and reviews are fictional, generated with problems planted on purpose
+      so the method could be checked against a known answer. The numbers show the method, not a real market.
+      <a href="#validation">How it was validated →</a></p>
+    <dl class="stats" id="stats"></dl>
+    <ul class="tools" aria-label="Tools used">
+      <li>Python · pandas</li><li>SQL · SQLite</li><li>NLP · VADER, TF-IDF</li><li>scikit-learn</li>
+      <li>Statistics</li><li>Power BI · DAX</li>
+    </ul>
+  </section>
+
+  <!-- FINDING 1 -->
+  <section class="band" id="finding">
+    <div class="wrap">
+      <p class="eyebrow">01 · The headline finding</p>
+      <h2>Ranking by volume would have sent the budget to the wrong problem</h2>
+      <p class="section-lede">Price is the complaint customers mention most. But a key-driver regression, holding other
+        complaints and the brand constant, shows a price complaint barely moves the rating. Switch the view and
+        watch the ranking flip.</p>
+      <div class="card chart-card">
+        <div class="toggle" role="group" aria-label="Rank themes by">
+          <button type="button" data-mode="often" aria-pressed="true">How often it's mentioned</button>
+          <button type="button" data-mode="cost" aria-pressed="false">How much it costs the rating</button>
+        </div>
+        <p class="chart-caption" id="priority-caption"></p>
+        <div class="race" id="priority" aria-live="polite"></div>
+        <p class="insight" id="priority-insight"></p>
+        <details class="table-view"><summary>View as table</summary><div id="priority-table"></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINDING 2 -->
+  <section class="wrap" id="warning">
+    <p class="eyebrow">02 · Early warning</p>
+    <h2>Theme monitoring caught a defect that the star ratings never flagged</h2>
+    <p class="section-lede" id="warning-lede"></p>
+    <div class="grid-2">
+      <div class="card chart-card">
+        <h3>Velora: share of reviews complaining about reliability</h3>
+        <p class="chart-sub">Quarterly rate against an alert limit built from the previous four quarters</p>
+        <div class="chart" id="chart-rel"></div>
+      </div>
+      <div class="card chart-card">
+        <h3>Velora: share of 1-2 star reviews</h3>
+        <p class="chart-sub">What a ratings dashboard watches. Same test, same limits</p>
+        <div class="chart" id="chart-low"></div>
+      </div>
+    </div>
+    <div class="callouts" id="warning-callouts"></div>
+  </section>
+
+  <!-- FINDING 3 -->
+  <section class="band" id="brands">
+    <div class="wrap">
+      <p class="eyebrow">03 · Who is falling behind</p>
+      <h2>Norvik's service problem has more than doubled since 2020</h2>
+      <p class="section-lede">Two brands trail the market, and the confidence intervals show the gap is real, not noise.
+        For Norvik, the cause is a dealer network getting steadily worse.</p>
+      <div class="grid-2">
+        <div class="card chart-card">
+          <h3>Brand ranking with uncertainty</h3>
+          <p class="chart-sub">Bar = 95% confidence interval · ◆ = rating adjusted for sample size</p>
+          <div class="chart" id="chart-brands"></div>
+        </div>
+        <div class="card chart-card">
+          <h3>Share of reviews with a service complaint</h3>
+          <p class="chart-sub">Norvik against all other brands, by year</p>
+          <div class="chart" id="chart-norvik"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section class="wrap" id="recommendations">
+    <p class="eyebrow">04 · What management should do</p>
+    <h2>Four recommendations, each with its evidence and how far to trust it</h2>
+    <ol class="recs" id="recs"></ol>
+    <div class="card scen">
+      <h3>What-if scenarios</h3>
+      <p class="chart-sub">Assumption: each complaint removed gains its regression coefficient in stars. Ratings only;
+        no revenue is claimed because none was measured.</p>
+      <div id="scenarios"></div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section class="band" id="dashboard">
+    <div class="wrap">
+      <p class="eyebrow">05 · Power BI dashboard</p>
+      <h2>Three pages, from headline to the individual review</h2>
+      <p class="section-lede">Star schema (one review fact table, brand/model and date dimensions, a review × theme bridge),
+        19 DAX measures, and the whole report saved as a Power BI Project, so every measure and visual is reviewable in git.</p>
+      <div class="shots" id="shots"></div>
+    </div>
+  </section>
+
+  <!-- VALIDATION -->
+  <section class="wrap" id="validation">
+    <p class="eyebrow">06 · How I know it works</p>
+    <h2>The analysis ran blind, then was checked against the planted answers</h2>
+    <p class="section-lede">Real review data has no answer key, so you can never be sure a method missed something.
+      The generator planted known problems and saved the answers separately. No analysis script was allowed to read them.
+      At the end, one script compared the results with the answers.</p>
+    <div class="score" id="score"></div>
+    <div class="card"><div id="checks"></div></div>
+    <div class="grid-2 tight">
+      <div class="card">
+        <h3>Theme tagger vs the true themes</h3>
+        <p class="chart-sub">High precision; recall limited by indirect phrasing such as "towed twice in six months"</p>
+        <div id="tagger"></div>
+      </div>
+      <div class="card">
+        <h3>Sentiment models, held-out test set</h3>
+        <p class="chart-sub">Against rating-based (weak) labels. Templated synthetic text flatters text models</p>
+        <div id="models"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="band" id="method">
+    <div class="wrap">
+      <p class="eyebrow">07 · Method</p>
+      <h2>One command rebuilds everything, from messy CSV to dashboard</h2>
+      <ol class="pipeline" id="pipeline"></ol>
+      <div class="grid-2 tight">
+        <div class="card">
+          <h3>Cleaning, with every step logged</h3>
+          <div id="cleaning"></div>
+        </div>
+        <div class="card">
+          <h3>What this project does not claim</h3>
+          <ul class="limits">
+            <li><strong>Synthetic data.</strong> It proves the method, not the findings.</li>
+            <li><strong>Weak labels.</strong> Star ratings are an imperfect stand-in for sentiment.</li>
+            <li><strong>Keywords miss things.</strong> Indirect phrasing and sarcasm; VADER reads 69% of sarcastic reviews as positive.</li>
+            <li><strong>Association, not causation.</strong> The regression shows what goes with low ratings, not what causes them.</li>
+            <li><strong>No sales data.</strong> Scenarios estimate rating changes only.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="links" id="links"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner" id="footer"></div>
+</footer>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
