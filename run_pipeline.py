@@ -12,8 +12,10 @@ import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent / "src"))
+sys.path.insert(0, str(Path(__file__).parent / "powerbi"))
 
 import build_db  # noqa: E402
+import build_pbip  # noqa: E402
 import charts  # noqa: E402
 import clean  # noqa: E402
 import drivers  # noqa: E402
@@ -37,6 +39,7 @@ STEPS = [
     ("7a Key drivers, ranking, scenarios", drivers.main, True),
     ("7b Early-warning alerts", early_warning.main, True),
     ("6  Export Power BI tables", powerbi_export.main, True),
+    ("6  Generate Power BI project (PBIP)", build_pbip.main, True),
     ("   Charts", charts.main, True),
     ("   Validate against planted signals", validate_planted.main, not REAL),
 ]

@@ -1,0 +1,12 @@
+relationship e7a612ee-650d-5892-9942-28035d919cd4
+	fromColumn: fact_reviews.model_key
+	toColumn: dim_brand_model.model_key
+
+relationship e98ca5f0-31f1-5dfa-926b-78a2a2cf7fff
+	fromColumn: fact_reviews.date
+	toColumn: dim_date.date
+
+relationship d3818eea-6adc-50d4-9328-dfae39e7da7b
+	crossFilteringBehavior: bothDirections
+	fromColumn: bridge_review_theme.review_id
+	toColumn: fact_reviews.review_id

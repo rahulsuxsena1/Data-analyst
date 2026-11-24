@@ -1,0 +1,104 @@
+table control_chart
+	lineageTag: a52039aa-0c5a-5069-b65c-e70e2213fb87
+
+	measure 'Velora Reliability Rate' =
+			CALCULATE (
+			    SUM ( control_chart[rate] ),
+			    control_chart[brand] = "Velora",
+			    control_chart[metric] = "reliability"
+			)
+		formatString: 0.0%
+		lineageTag: 37526cf2-fce7-54e9-8df6-7440a45d88dc
+
+	measure 'Velora Reliability Alert Limit' =
+			CALCULATE (
+			    SUM ( control_chart[upper_limit] ),
+			    control_chart[brand] = "Velora",
+			    control_chart[metric] = "reliability",
+			    control_chart[tested] = TRUE ()
+			)
+		formatString: 0.0%
+		lineageTag: e320fba3-7c71-5c9e-9390-cde8131fec1d
+
+	column brand
+		dataType: string
+		lineageTag: 80a48e23-a181-51a4-a9c3-6b8f9356f776
+		summarizeBy: none
+		sourceColumn: brand
+
+	column metric
+		dataType: string
+		lineageTag: 8b08a0d8-f08e-5622-820f-bdc5584521df
+		summarizeBy: none
+		sourceColumn: metric
+
+	column period
+		dataType: string
+		lineageTag: 796af9b1-55b2-5c30-83ce-1cdedf4ced69
+		summarizeBy: none
+		sourceColumn: period
+
+	column n
+		dataType: int64
+		formatString: 0
+		lineageTag: d53b0046-2323-5d09-9d76-d77ead1b41ef
+		summarizeBy: none
+		sourceColumn: n
+
+	column rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 70aaecb2-47c4-59b8-b6f1-1727910b7f9f
+		summarizeBy: sum
+		sourceColumn: rate
+
+	column baseline
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 84f0ebba-38cc-539b-ab6e-2bd8d632a188
+		summarizeBy: sum
+		sourceColumn: baseline
+
+	column baseline_n
+		dataType: int64
+		formatString: 0
+		lineageTag: 955546a0-237a-5cce-8890-a57d426fcc9b
+		summarizeBy: none
+		sourceColumn: baseline_n
+
+	column upper_limit
+		dataType: double
+		formatString: 0.0%
+		lineageTag: ff738573-637b-5bbd-be11-14428f23eaea
+		summarizeBy: sum
+		sourceColumn: upper_limit
+
+	column z
+		dataType: double
+		lineageTag: 7d8d0843-673d-5a31-9471-0b039c2e55ab
+		summarizeBy: sum
+		sourceColumn: z
+
+	column tested
+		dataType: boolean
+		lineageTag: 20191806-7eb9-5d5c-9da4-89886a8c141f
+		summarizeBy: none
+		sourceColumn: tested
+
+	column alert
+		dataType: boolean
+		lineageTag: 7e55f36e-cc4b-53dd-bb45-6b33e4f7cdf1
+		summarizeBy: none
+		sourceColumn: alert
+
+	partition control_chart = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "control_chart.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"brand", type text}, {"metric", type text}, {"period", type text}, {"n", Int64.Type}, {"rate", type number}, {"baseline", type number}, {"baseline_n", Int64.Type}, {"upper_limit", type number}, {"z", type number}, {"tested", type logical}, {"alert", type logical}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

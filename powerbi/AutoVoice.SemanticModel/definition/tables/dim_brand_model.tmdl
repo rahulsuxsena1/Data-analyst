@@ -1,0 +1,33 @@
+table dim_brand_model
+	lineageTag: f2869559-29ed-5b36-b02d-125697fdd778
+
+	column model_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 9882129f-e724-57b9-9051-748adbb27016
+		summarizeBy: none
+		sourceColumn: model_key
+
+	column brand
+		dataType: string
+		lineageTag: 41f73495-dd8c-5ce0-b404-9e95f1401a87
+		summarizeBy: none
+		sourceColumn: brand
+
+	column model
+		dataType: string
+		lineageTag: 46277b8b-ccb3-563b-98fb-26f76912d60f
+		summarizeBy: none
+		sourceColumn: model
+
+	partition dim_brand_model = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_brand_model.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"model_key", Int64.Type}, {"brand", type text}, {"model", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

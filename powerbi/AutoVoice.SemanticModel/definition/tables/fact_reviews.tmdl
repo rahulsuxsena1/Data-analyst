@@ -1,0 +1,227 @@
+table fact_reviews
+	lineageTag: ebf593de-cac5-59fa-9b63-68876aea0a9e
+
+	measure 'Total Reviews' = COUNTROWS ( fact_reviews )
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: ae160e9f-ce03-505c-ac1e-e225a8b003cc
+
+	measure 'Avg Rating' = AVERAGE ( fact_reviews[rating] )
+		formatString: 0.00
+		displayFolder: KPIs
+		lineageTag: 2a99a7ab-a2d2-5218-b6b5-f6913c446461
+
+	measure '% Negative' =
+			DIVIDE (
+			    CALCULATE ( [Total Reviews], fact_reviews[rating] <= 2 ),
+			    [Total Reviews]
+			)
+		formatString: 0.0%
+		displayFolder: KPIs
+		lineageTag: 0684417b-24f6-53c7-978a-65d58a561ed5
+
+	measure '% Positive' =
+			DIVIDE (
+			    CALCULATE ( [Total Reviews], fact_reviews[rating] >= 4 ),
+			    [Total Reviews]
+			)
+		formatString: 0.0%
+		displayFolder: KPIs
+		lineageTag: 4a852259-7dcf-54f0-a9cb-c609c512bbc9
+
+	measure 'Avg Rating PY' = CALCULATE ( [Avg Rating], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+		formatString: 0.00
+		displayFolder: Trend
+		lineageTag: 99dd6efc-a407-54df-b1d8-4183f0155921
+
+	measure 'Avg Rating YoY' =
+			VAR yr = YEAR ( MAX ( fact_reviews[date] ) )
+			VAR cur = CALCULATE ( [Avg Rating], REMOVEFILTERS ( dim_date ), dim_date[year] = yr )
+			VAR prev = CALCULATE ( [Avg Rating], REMOVEFILTERS ( dim_date ), dim_date[year] = yr - 1 )
+			RETURN
+			    IF ( NOT ISBLANK ( prev ), cur - prev )
+		formatString: +0.00;-0.00;0.00
+		displayFolder: Trend
+		lineageTag: 12fff028-c113-519d-8465-297f4e643fdd
+
+	measure 'Avg Rating 3M Rolling' =
+			CALCULATE (
+			    [Avg Rating],
+			    DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -3, MONTH )
+			)
+		formatString: 0.00
+		displayFolder: Trend
+		lineageTag: e0a7177b-dd47-5a10-86ce-3b5e43157277
+
+	measure 'Adjusted Rating' =
+			VAR k = 21
+			VAR n = [Total Reviews]
+			VAR overall =
+			    CALCULATE ( [Avg Rating], REMOVEFILTERS ( dim_brand_model ) )
+			RETURN
+			    DIVIDE ( n * [Avg Rating] + k * overall, n + k )
+		formatString: 0.00
+		displayFolder: KPIs
+		lineageTag: 5750efd7-3cf7-5760-a77c-7c89751b3641
+
+	measure 'Theme Mentions' = DISTINCTCOUNT ( bridge_review_theme[review_id] )
+		formatString: #,0
+		displayFolder: Themes
+		lineageTag: a6e96148-330b-5730-b850-5015c7d0f737
+
+	measure 'Negative Theme Mentions' =
+			CALCULATE (
+			    DISTINCTCOUNT ( bridge_review_theme[review_id] ),
+			    bridge_review_theme[theme_polarity] = "negative"
+			)
+		formatString: #,0
+		displayFolder: Themes
+		lineageTag: 67cc597a-a2e9-5488-ab3e-ba4006c4bf30
+
+	measure '% Mentions Negative' = DIVIDE ( [Negative Theme Mentions], [Theme Mentions] )
+		formatString: 0.0%
+		displayFolder: Themes
+		lineageTag: 3ee344d6-a273-509b-873c-177535857bdf
+
+	measure 'Complaint Rate' =
+			DIVIDE (
+			    [Negative Theme Mentions],
+			    CALCULATE ( [Total Reviews], REMOVEFILTERS ( bridge_review_theme ) )
+			)
+		formatString: 0.0%
+		displayFolder: Themes
+		lineageTag: 32592fae-94b2-5ed4-972a-395e7ebfcda5
+
+	measure 'Avg Rating When Complained' = CALCULATE ( [Avg Rating], bridge_review_theme[theme_polarity] = "negative" )
+		formatString: 0.00
+		displayFolder: Themes
+		lineageTag: 6fec9a92-c0af-563c-a7b4-0e79a1c6faf5
+
+	measure '% Service Mentions Negative' = CALCULATE ( [% Mentions Negative], bridge_review_theme[theme] = "service" )
+		formatString: 0.0%
+		displayFolder: Themes
+		lineageTag: 83892b81-dcb6-5166-bbc5-a295359f9d6f
+
+	measure 'Mixed Reviews' = SUM ( fact_reviews[mixed_flag] )
+		formatString: #,0
+		displayFolder: Themes
+		lineageTag: 1573d3b3-7823-5e7d-b451-96653e56e526
+
+	column review_id
+		dataType: string
+		lineageTag: aff26dcc-244a-5237-963f-5f36e2659906
+		summarizeBy: none
+		sourceColumn: review_id
+
+	column model_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 76069017-c33e-5047-b3c4-2741e03ea32a
+		summarizeBy: none
+		sourceColumn: model_key
+
+	column date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 56c3c7f1-d3ba-5ad7-bacc-73cb25e808d6
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column model_year
+		dataType: int64
+		formatString: 0
+		lineageTag: c939b871-1040-52bc-a0c8-9ddd1ac6e96a
+		summarizeBy: none
+		sourceColumn: model_year
+
+	column rating
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b293103-bc3a-56b0-8642-d1f7d1426d84
+		summarizeBy: none
+		sourceColumn: rating
+
+	column sentiment_label
+		dataType: string
+		lineageTag: b49606d5-6f68-549d-bd7f-49dbb791214f
+		summarizeBy: none
+		sourceColumn: sentiment_label
+
+	column predicted_sentiment
+		dataType: string
+		lineageTag: f5d4d290-2552-5fad-86db-4e21dfd2e8c3
+		summarizeBy: none
+		sourceColumn: predicted_sentiment
+
+	column dealer_region
+		dataType: string
+		lineageTag: a5a00e22-b683-5034-9860-f85f7b8b4e03
+		summarizeBy: none
+		sourceColumn: dealer_region
+
+	column verified_purchase
+		dataType: boolean
+		lineageTag: f27eaa3f-89c5-5c42-85d0-cf22c9a2c5dc
+		summarizeBy: none
+		sourceColumn: verified_purchase
+
+	column word_count
+		dataType: int64
+		formatString: 0
+		lineageTag: fb28a395-5ddc-50a2-9857-262f1ae663f8
+		summarizeBy: sum
+		sourceColumn: word_count
+
+	column n_themes
+		dataType: int64
+		formatString: 0
+		lineageTag: 3a34a643-ad00-5933-a000-0f13dfc57d6e
+		summarizeBy: sum
+		sourceColumn: n_themes
+
+	column mixed_flag
+		dataType: int64
+		formatString: 0
+		lineageTag: 9f2ca280-2458-5b17-9e58-c66f218172df
+		summarizeBy: sum
+		sourceColumn: mixed_flag
+
+	column text_rating_conflict
+		dataType: int64
+		formatString: 0
+		lineageTag: 593b2cc1-8da4-5823-ba56-b6c73536396f
+		summarizeBy: sum
+		sourceColumn: text_rating_conflict
+
+	column is_negative
+		dataType: int64
+		formatString: 0
+		lineageTag: a837c7b7-997e-58a8-b784-d63d403ec123
+		summarizeBy: sum
+		sourceColumn: is_negative
+
+	column review_title
+		dataType: string
+		lineageTag: ce2d42db-ca0c-56f6-a466-607fb7e55da6
+		summarizeBy: none
+		sourceColumn: review_title
+
+	column review_text
+		dataType: string
+		lineageTag: 19482f75-c745-5b10-9902-e95b9d11727a
+		summarizeBy: none
+		sourceColumn: review_text
+
+	partition fact_reviews = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_reviews.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"review_id", type text}, {"model_key", Int64.Type}, {"date", type date}, {"model_year", Int64.Type}, {"rating", Int64.Type}, {"sentiment_label", type text}, {"predicted_sentiment", type text}, {"dealer_region", type text}, {"verified_purchase", type logical}, {"word_count", Int64.Type}, {"n_themes", Int64.Type}, {"mixed_flag", Int64.Type}, {"text_rating_conflict", Int64.Type}, {"is_negative", Int64.Type}, {"review_title", type text}, {"review_text", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,45 @@
+table bridge_review_theme
+	lineageTag: ae9f6a13-dc7e-5de0-9ab4-6381a0f5f9f8
+
+	column review_id
+		dataType: string
+		lineageTag: 875df604-265d-518d-aa22-d5fb1f97167c
+		summarizeBy: none
+		sourceColumn: review_id
+
+	column theme
+		dataType: string
+		lineageTag: c8ffdf15-dd1c-5840-8275-fc62aeb5d907
+		summarizeBy: none
+		sourceColumn: theme
+
+	column theme_sentiment
+		dataType: double
+		lineageTag: e6fc4550-d945-5720-b442-f356106b92bc
+		summarizeBy: sum
+		sourceColumn: theme_sentiment
+
+	column theme_polarity
+		dataType: string
+		lineageTag: 91156566-4b97-5780-b0b5-ef81ee096cc8
+		summarizeBy: none
+		sourceColumn: theme_polarity
+
+	column is_negative_mention
+		dataType: int64
+		formatString: 0
+		lineageTag: a57dc76a-3156-579d-b3d7-663bcfedb2f4
+		summarizeBy: sum
+		sourceColumn: is_negative_mention
+
+	partition bridge_review_theme = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "bridge_review_theme.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"review_id", type text}, {"theme", type text}, {"theme_sentiment", type number}, {"theme_polarity", type text}, {"is_negative_mention", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

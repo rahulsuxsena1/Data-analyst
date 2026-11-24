@@ -1,0 +1,78 @@
+table theme_priority
+	lineageTag: 2e651674-9f58-545f-9ae9-717d07259a7c
+
+	measure 'Complaint Share %' = SUM ( theme_priority[pct_reviews_complaining] ) / 100
+		formatString: 0.0%
+		lineageTag: a106ac5a-60f6-55b3-8a41-097c0230694b
+
+	measure 'Stars Lost per 100 Reviews' = SUM ( theme_priority[stars_lost_per_100_reviews] )
+		formatString: 0.0
+		lineageTag: 4df2d1e5-ef11-558a-963b-4c8f3475dee8
+
+	column theme
+		dataType: string
+		lineageTag: 58951689-9f67-5e5a-936f-1c33df9806e9
+		summarizeBy: none
+		sourceColumn: theme
+
+	column pct_reviews_complaining
+		dataType: double
+		lineageTag: 6d8ead9d-a90f-5203-8b97-e746ad62e388
+		summarizeBy: sum
+		sourceColumn: pct_reviews_complaining
+
+	column stars_lost_per_complaint
+		dataType: double
+		lineageTag: 1221f588-32fc-5c83-9bbb-3ee98f3b013e
+		summarizeBy: sum
+		sourceColumn: stars_lost_per_complaint
+
+	column ci_low
+		dataType: double
+		lineageTag: 89755e8b-65a4-51ba-809c-c97aa90d892f
+		summarizeBy: sum
+		sourceColumn: ci_low
+
+	column ci_high
+		dataType: double
+		lineageTag: f8e8d341-bd5d-5f09-a262-aeb680d831ef
+		summarizeBy: sum
+		sourceColumn: ci_high
+
+	column volume_x_negativity_score
+		dataType: double
+		lineageTag: e8cc3ef1-4ee6-58e7-8663-be6c4b92d50f
+		summarizeBy: sum
+		sourceColumn: volume_x_negativity_score
+
+	column stars_lost_per_100_reviews
+		dataType: double
+		lineageTag: d754da25-15e8-5437-b860-02ecc9539966
+		summarizeBy: sum
+		sourceColumn: stars_lost_per_100_reviews
+
+	column naive_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: c1d061bf-639d-5cd5-b336-0f434c3a85a6
+		summarizeBy: none
+		sourceColumn: naive_rank
+
+	column impact_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 433fb81f-f432-5e89-99fb-8d3bedb1ad66
+		summarizeBy: none
+		sourceColumn: impact_rank
+
+	partition theme_priority = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "theme_priority.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"theme", type text}, {"pct_reviews_complaining", type number}, {"stars_lost_per_complaint", type number}, {"ci_low", type number}, {"ci_high", type number}, {"volume_x_negativity_score", type number}, {"stars_lost_per_100_reviews", type number}, {"naive_rank", Int64.Type}, {"impact_rank", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

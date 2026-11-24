@@ -1,0 +1,67 @@
+table dim_date
+	lineageTag: 4bec7ba0-f914-5347-b8ae-1bf8771077d9
+	dataCategory: Time
+
+	column date
+		dataType: dateTime
+		isKey
+		formatString: yyyy-mm-dd
+		lineageTag: e114eed0-835e-5b7d-9745-e6b0022ae21c
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: c2bf619a-b33f-5650-81f4-5d0a6ded17bf
+		summarizeBy: none
+		sourceColumn: year
+
+	column quarter
+		dataType: string
+		lineageTag: 1e60b9c5-cfef-5778-8e8f-886a74c3f3e4
+		summarizeBy: none
+		sourceColumn: quarter
+
+	column year_quarter
+		dataType: string
+		lineageTag: 3c292d5e-edda-5895-8249-4a74ac7e7149
+		summarizeBy: none
+		sourceColumn: year_quarter
+
+	column month_start
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: e24569bf-64b6-59f8-843f-00172a7a13c8
+		summarizeBy: none
+		sourceColumn: month_start
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column month_name
+		dataType: string
+		lineageTag: 6dff6c5b-194e-5740-962b-aaef302c81a5
+		summarizeBy: none
+		sourceColumn: month_name
+		sortByColumn: month_num
+
+	column month_num
+		dataType: int64
+		formatString: 0
+		lineageTag: 11b701d3-1874-5d0b-a259-cd6490a159df
+		summarizeBy: none
+		sourceColumn: month_num
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_date.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"date", type date}, {"year", Int64.Type}, {"quarter", type text}, {"year_quarter", type text}, {"month_start", type date}, {"month_name", type text}, {"month_num", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

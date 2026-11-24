@@ -1,0 +1,58 @@
+table scenarios
+	lineageTag: 291293a8-2698-5221-a60f-2dd2aaa3eff8
+
+	column scenario
+		dataType: string
+		lineageTag: e4ecf911-db4e-511a-9444-6466293c65ee
+		summarizeBy: none
+		sourceColumn: scenario
+
+	column scope_reviews
+		dataType: int64
+		formatString: 0
+		lineageTag: 13e27468-e032-514f-aebb-4c73ee59e536
+		summarizeBy: none
+		sourceColumn: scope_reviews
+
+	column complaints_removed
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b1f4a95-5e18-5e24-aedc-05d94f54b2ea
+		summarizeBy: sum
+		sourceColumn: complaints_removed
+
+	column scope_avg_before
+		dataType: double
+		lineageTag: dc4178d9-8b07-5539-9938-d58c4fa7a466
+		summarizeBy: sum
+		sourceColumn: scope_avg_before
+
+	column scope_avg_after
+		dataType: double
+		lineageTag: 46528cf4-94ce-569c-bd76-d9cbeb86cc46
+		summarizeBy: sum
+		sourceColumn: scope_avg_after
+
+	column portfolio_avg_change
+		dataType: double
+		lineageTag: 8f4c004c-4565-5ea2-bd92-af52fd4e2cdd
+		summarizeBy: sum
+		sourceColumn: portfolio_avg_change
+
+	column assumption
+		dataType: string
+		lineageTag: a2c20471-be23-51b9-bd2c-11b8acc345e1
+		summarizeBy: none
+		sourceColumn: assumption
+
+	partition scenarios = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "scenarios.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"scenario", type text}, {"scope_reviews", Int64.Type}, {"complaints_removed", Int64.Type}, {"scope_avg_before", type number}, {"scope_avg_after", type number}, {"portfolio_avg_change", type number}, {"assumption", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

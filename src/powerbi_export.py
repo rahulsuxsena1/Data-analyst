@@ -44,6 +44,7 @@ def main():
     f = df.merge(bm, on=["brand", "model"])
     f["date"] = f["review_date"].dt.strftime("%Y-%m-%d")
     f["is_negative"] = (f["rating"] <= 2).astype(int)
+    f["model_year"] = f["model_year"].astype("Int64")   # write 2019, not 2019.0 (blanks stay blank)
     fact = f[["review_id", "model_key", "date", "model_year", "rating", "sentiment_label",
               "predicted_sentiment", "dealer_region", "verified_purchase", "word_count", "n_themes",
               "mixed_flag", "text_rating_conflict", "is_negative", "review_title", "review_text"]]
@@ -55,8 +56,10 @@ def main():
 
     pd.read_csv(ROOT / "outputs" / "theme_priority.csv").to_csv(OUT / "theme_priority.csv", index=False)
     pd.read_csv(ROOT / "outputs" / "brand_ranking.csv").to_csv(OUT / "brand_ranking.csv", index=False)
-    pd.read_csv(ROOT / "outputs" / "alerts.csv").to_csv(OUT / "alerts.csv", index=False)
-    pd.read_csv(ROOT / "outputs" / "control_chart_data.csv").to_csv(OUT / "control_chart.csv", index=False)
+    for src, dst in [("alerts.csv", "alerts.csv"), ("control_chart_data.csv", "control_chart.csv")]:
+        t = pd.read_csv(ROOT / "outputs" / src)
+        t["baseline_n"] = t["baseline_n"].astype("Int64")
+        t.to_csv(OUT / dst, index=False)
     pd.read_csv(ROOT / "outputs" / "scenarios.csv").to_csv(OUT / "scenarios.csv", index=False)
     for p in sorted(OUT.glob("*.csv")):
         print(f"powerbi_data/{p.name:<26} {sum(1 for _ in open(p)) - 1:>7,} rows")

@@ -1,0 +1,21 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["DataFolder", "fact_reviews", "bridge_review_theme", "dim_brand_model", "dim_date", "theme_priority", "brand_ranking", "alerts", "control_chart", "scenarios"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+ref table fact_reviews
+ref table bridge_review_theme
+ref table dim_brand_model
+ref table dim_date
+ref table theme_priority
+ref table brand_ranking
+ref table alerts
+ref table control_chart
+ref table scenarios

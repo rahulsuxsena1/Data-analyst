@@ -1,0 +1,5 @@
+expression DataFolder = "C:\AutoVoice\powerbi_data\" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
+	lineageTag: 6c094804-b57d-5bfd-bc9c-51b3a5fb6b6b
+
+	annotation PBI_ResultType = Text
+

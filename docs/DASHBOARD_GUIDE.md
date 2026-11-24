@@ -1,8 +1,63 @@
 # Power BI dashboard: build guide
 
-You build the `.pbix` yourself in **Power BI Desktop** (free, Windows). This guide gives every step,
-relationship and DAX measure. Expect 3 to 5 hours the first time. Build it yourself rather than
-copying a finished file: the dashboard is the part interviewers ask about most.
+There are two ways to get the dashboard:
+
+- **Option A: open the generated project** (`powerbi/AutoVoice.pbip`, about 10 minutes). The data model,
+  relationships, all DAX measures and the 3 report pages are already defined as text files.
+- **Option B: build it by hand** (sections 1 to 7 below, 3 to 5 hours). Recommended at least once,
+  even if you use Option A: interviewers ask how the model and measures were built, and doing it
+  yourself is the best way to be able to answer.
+
+## Option A: open the generated Power BI project
+
+`powerbi/` is a **Power BI Project (PBIP)**: the same content as a `.pbix`, saved as readable text so it
+works with git. It is produced by `python powerbi/build_pbip.py`.
+
+| Part | Format | What is inside |
+|---|---|---|
+| `AutoVoice.SemanticModel/` | TMDL | 9 tables loaded from CSV, 3 relationships, 19 DAX measures, a `DataFolder` parameter |
+| `AutoVoice.Report/` | PBIR | 3 pages, 28 visuals, AutoVoice colour theme |
+| `AutoVoice.pbip` | JSON | The file you double-click |
+
+**How it was checked (Power BI itself cannot run on Linux):** the data model was loaded and re-saved with
+Microsoft's Analysis Services library (the same TMDL reader Power BI uses), and every report file was validated
+against Microsoft's published JSON schemas. What could **not** be tested is the first open and refresh in
+Power BI Desktop. If something fails, see *Troubleshooting* below.
+
+### Steps
+
+1. **Install Power BI Desktop** (free) from the Microsoft Store, or update it to the latest version.
+2. **Get the files onto your PC:** on GitHub, *Code → Download ZIP*, or `git clone` the repository.
+3. **Put the data where the model looks for it.** The model reads CSVs from `C:\AutoVoice\powerbi_data\`.
+   Either copy the repo's `powerbi_data` folder there, or keep it where it is and change the path in step 5.
+4. **Open `powerbi/AutoVoice.pbip`** (double-click, or *File → Open* in Power BI Desktop).
+5. **If your data is somewhere else:** *Home → Transform data → Edit parameters → DataFolder*, paste the
+   folder path **ending with a backslash** (for example `D:\Projects\Data-analyst\powerbi_data\`),
+   then *Apply changes*.
+6. **Home → Refresh.** Wait for all 9 tables to load (about 11,500 reviews).
+7. Click through the 3 pages, then **File → Save** (it saves back into the PBIP folder).
+   *File → Save as → .pbix* if you also want a single-file copy.
+
+**What you should see:** Overview KPI cards showing 11,496 reviews, an average rating of 3.64 and 14.9% rated 1-2 stars.
+On page 2 the left bar chart ranks price first and the right one ranks service first. On page 3, the
+Velora line crosses the alert limit at 2022Q4.
+
+### Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| "This file format isn't supported" / PBIP won't open | Update Power BI Desktop. On older versions, turn on *File → Options → Preview features →* **Power BI Project (.pbip) save option**, **Store semantic model using TMDL format** and **Store reports using enhanced metadata format (PBIR)**, then restart |
+| Refresh error *"Could not find a part of the path"* | The `DataFolder` parameter is wrong (step 5). The path must end with `\` |
+| Error about the theme `AutoVoiceTheme.json` | Open `AutoVoice.Report/definition/report.json`, delete the `customTheme` block and the `resourcePackages` entry, save, reopen. Then apply a theme from *View → Themes* |
+| One visual shows an error or is empty | Select it and re-drag the fields listed in sections 3 to 5 into its wells. Send me the error text and I'll fix the generator |
+| Numbers look 100× too big or decimals are wrong | The model parses CSVs with `en-US` number format on purpose; check that the CSVs weren't opened and re-saved in Excel |
+
+To change anything permanently (titles, measures, layout), edit `powerbi/build_pbip.py` and run it again.
+Edits made inside Power BI Desktop are saved to the PBIP folder too, but are overwritten if the generator runs again.
+
+---
+
+# Option B: build it by hand
 
 ## 0. Files you need
 
@@ -42,6 +97,10 @@ fact_reviews[review_id]     1 ──< *  bridge_review_theme[review_id]
 ## 2. DAX measures
 
 Create a blank table called `_Measures` (**Home → Enter data → OK**) and add these measures to it.
+(In the generated PBIP, the review measures live on `fact_reviews` in display folders such as *KPIs*,
+*Trend* and *Themes*; the theme-priority and Velora early-warning measures live on their own tables.
+The generated `Avg Rating YoY` compares the latest year in the selection with the year before, so the
+card makes sense even with no year selected.)
 
 ```DAX
 Total Reviews = COUNTROWS ( fact_reviews )

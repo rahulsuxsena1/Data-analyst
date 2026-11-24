@@ -1,0 +1,85 @@
+table alerts
+	lineageTag: 96693d79-a96f-5d54-be64-bfeaba75a75e
+
+	column brand
+		dataType: string
+		lineageTag: aecc7aa5-03f6-58a3-b1fd-521ac4980019
+		summarizeBy: none
+		sourceColumn: brand
+
+	column metric
+		dataType: string
+		lineageTag: ff005b7e-e1f4-5a6e-b45f-c33a863ffa7f
+		summarizeBy: none
+		sourceColumn: metric
+
+	column period
+		dataType: string
+		lineageTag: 458b2f81-25a0-5948-8efb-1d35834d2d8e
+		summarizeBy: none
+		sourceColumn: period
+
+	column n
+		dataType: int64
+		formatString: 0
+		lineageTag: 455d82c5-8a0c-59ff-a4a5-342882fc8544
+		summarizeBy: none
+		sourceColumn: n
+
+	column rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 21e15b65-3244-5c19-b180-906ab0a561e3
+		summarizeBy: sum
+		sourceColumn: rate
+
+	column baseline
+		dataType: double
+		formatString: 0.0%
+		lineageTag: c4209324-0fe3-5f0f-a1b1-cef573cd90ee
+		summarizeBy: sum
+		sourceColumn: baseline
+
+	column baseline_n
+		dataType: int64
+		formatString: 0
+		lineageTag: 1bf5b525-e680-5d0b-96a0-374a09413a38
+		summarizeBy: none
+		sourceColumn: baseline_n
+
+	column upper_limit
+		dataType: double
+		formatString: 0.0%
+		lineageTag: e40eaf51-e166-5df9-af6c-60878257679a
+		summarizeBy: sum
+		sourceColumn: upper_limit
+
+	column z
+		dataType: double
+		lineageTag: a2b966d2-38a6-5f59-aeb4-326908ada4ef
+		summarizeBy: sum
+		sourceColumn: z
+
+	column tested
+		dataType: boolean
+		lineageTag: 2b9337a9-dc87-5e98-b7a8-39f56a982a50
+		summarizeBy: none
+		sourceColumn: tested
+
+	column alert
+		dataType: boolean
+		lineageTag: 85daec62-1819-56e9-ab91-e27687832670
+		summarizeBy: none
+		sourceColumn: alert
+
+	partition alerts = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "alerts.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"brand", type text}, {"metric", type text}, {"period", type text}, {"n", Int64.Type}, {"rate", type number}, {"baseline", type number}, {"baseline_n", Int64.Type}, {"upper_limit", type number}, {"z", type number}, {"tested", type logical}, {"alert", type logical}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,71 @@
+table brand_ranking
+	lineageTag: 4a6b67b1-cc9f-53d4-8e13-18ab6eaa3725
+
+	column brand
+		dataType: string
+		lineageTag: 342b28fb-80ca-5267-8e7e-a03e0c666920
+		summarizeBy: none
+		sourceColumn: brand
+
+	column reviews
+		dataType: int64
+		formatString: 0
+		lineageTag: c93c2586-dcd6-56da-a55e-277a6bded26d
+		summarizeBy: none
+		sourceColumn: reviews
+
+	column avg_rating
+		dataType: double
+		lineageTag: 9143c91a-1d9c-54c4-8fe8-3d23594ffdf4
+		summarizeBy: sum
+		sourceColumn: avg_rating
+
+	column var
+		dataType: double
+		lineageTag: 8b265999-f69f-56d7-8896-e8d1e17c4934
+		summarizeBy: sum
+		sourceColumn: var
+
+	column shrunk_mean
+		dataType: double
+		lineageTag: af17ae07-2b2d-59cd-8210-b67ff47d4451
+		summarizeBy: sum
+		sourceColumn: shrunk_mean
+
+	column ci_low
+		dataType: double
+		lineageTag: d6b062b6-2319-5d90-b360-c387e769371d
+		summarizeBy: sum
+		sourceColumn: ci_low
+
+	column ci_high
+		dataType: double
+		lineageTag: 4323414b-dc55-5626-88d2-2e8e4b8eac11
+		summarizeBy: sum
+		sourceColumn: ci_high
+
+	column raw_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: fbcd4e9d-ad2c-51db-bce8-824db0f97471
+		summarizeBy: none
+		sourceColumn: raw_rank
+
+	column fair_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 45960eae-e7da-5b3e-8afa-d13201da64e2
+		summarizeBy: none
+		sourceColumn: fair_rank
+
+	partition brand_ranking = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "brand_ranking.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"brand", type text}, {"reviews", Int64.Type}, {"avg_rating", type number}, {"var", type number}, {"shrunk_mean", type number}, {"ci_low", type number}, {"ci_high", type number}, {"raw_rank", Int64.Type}, {"fair_rank", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
